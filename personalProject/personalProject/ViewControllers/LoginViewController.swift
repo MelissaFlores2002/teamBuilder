@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 
 class LoginViewController: UIViewController {
-    override func viewDidLoad() {
-        
+    override func viewDidLoad() {        
     }
+    @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
 }
