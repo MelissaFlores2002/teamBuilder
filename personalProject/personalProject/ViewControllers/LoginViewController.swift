@@ -16,9 +16,7 @@ import FirebaseDatabase
 typealias FIRUser = Firebase.User
 
 class LoginViewController: UIViewController {
-    override func viewDidLoad() {        
-    }
-    
+
     @IBOutlet weak var signUpButton: UIButton!
     @IBAction func signUpButton(_ sender: UIButton) {
     guard let authUI = FUIAuth.defaultAuthUI() else { return }
@@ -27,6 +25,10 @@ class LoginViewController: UIViewController {
         present(authViewController, animated: true)
           print("SignUp!")
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
 }
 extension LoginViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, user: User?, error: Error?) {

@@ -173,7 +173,7 @@
                                     <color key="titleColor" red="0.43137254899999999" green="0.41960784309999999" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextButtonPressed:" destination="r1E-H9-fl4" eventType="touchUpInside" id="5rI-GH-68l"/>
+                                    <action selector="nextButtonPressed:" destination="r1E-H9-fl4" eventType="touchUpInside" id="O69-bV-yFI"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wV1-Yu-pMr">
@@ -220,8 +220,8 @@
                         <viewLayoutGuide key="safeArea" id="nqc-g1-j6g"/>
                     </view>
                     <connections>
-                        <outlet property="nextButton" destination="RAy-Bp-ZUI" id="xTQ-qn-WZx"/>
-                        <outlet property="usernameTextField" destination="35T-U5-Rs5" id="wGQ-FS-F7j"/>
+                        <outlet property="nextButton" destination="RAy-Bp-ZUI" id="oFj-Ch-fTs"/>
+                        <outlet property="usernameTextField" destination="35T-U5-Rs5" id="5Zs-qT-6Uh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVg-4k-cFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
