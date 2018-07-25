@@ -11,6 +11,8 @@
 		06BD649C2106B71E0038F725 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD649B2106B71E0038F725 /* LoginViewController.swift */; };
 		06BD64A421078D420038F725 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BD64A321078D420038F725 /* GoogleService-Info.plist */; };
 		06BD64A62107A7F50038F725 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD64A52107A7F50038F725 /* Users.swift */; };
+		06BD64A92107AB320038F725 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD64A82107AB320038F725 /* UserService.swift */; };
+		06BD64AB2107AC370038F725 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD64AA2107AC370038F725 /* CreateUsernameViewController.swift */; };
 		06F972D52106862C005AE63B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F972D42106862C005AE63B /* AppDelegate.swift */; };
 		06F972D72106862C005AE63B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F972D62106862C005AE63B /* ViewController.swift */; };
 		06F972DA2106862C005AE63B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F972D82106862C005AE63B /* Main.storyboard */; };
@@ -24,6 +26,8 @@
 		06BD649B2106B71E0038F725 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		06BD64A321078D420038F725 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		06BD64A52107A7F50038F725 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		06BD64A82107AB320038F725 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = personalProject/Models/UserService.swift; sourceTree = SOURCE_ROOT; };
+		06BD64AA2107AC370038F725 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
 		06F972D12106862C005AE63B /* personalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = personalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F972D42106862C005AE63B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06F972D62106862C005AE63B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,9 +52,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06BD64A72107AB170038F725 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				06BD64A82107AB320038F725 /* UserService.swift */,
+			);
+			name = Services;
+			path = "personalProject/Models/New Group";
+			sourceTree = "<group>";
+		};
 		06F972C82106862C005AE63B = {
 			isa = PBXGroup;
 			children = (
+				06BD64A72107AB170038F725 /* Services */,
 				06F972D32106862C005AE63B /* personalProject */,
 				06F972D22106862C005AE63B /* Products */,
 				E5C4E8D01671C6BC80BF4B40 /* Pods */,
@@ -96,6 +110,7 @@
 			children = (
 				06F972D62106862C005AE63B /* ViewController.swift */,
 				06BD649B2106B71E0038F725 /* LoginViewController.swift */,
+				06BD64AA2107AC370038F725 /* CreateUsernameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -272,6 +287,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				06BD64A62107A7F50038F725 /* Users.swift in Sources */,
+				06BD64A92107AB320038F725 /* UserService.swift in Sources */,
+				06BD64AB2107AC370038F725 /* CreateUsernameViewController.swift in Sources */,
 				06BD649C2106B71E0038F725 /* LoginViewController.swift in Sources */,
 				06F972D72106862C005AE63B /* ViewController.swift in Sources */,
 				06F972D52106862C005AE63B /* AppDelegate.swift in Sources */,

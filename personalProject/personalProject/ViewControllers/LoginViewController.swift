@@ -8,46 +8,43 @@
 
 import Foundation
 import UIKit
+import Firebase
 import FirebaseAuth
 import FirebaseUI
 import FirebaseDatabase
 
+typealias FIRUser = Firebase.User
+
 class LoginViewController: UIViewController {
     override func viewDidLoad() {        
     }
-    @IBOutlet weak var logInButton: UIButton!
+    
     @IBOutlet weak var signUpButton: UIButton!
-    @IBAction func signUp(_ sender: UIButton) {
-        guard let authUI = FUIAuth.defaultAuthUI()
-            else { return }
+    @IBAction func signUpButton(_ sender: UIButton) {
+    guard let authUI = FUIAuth.defaultAuthUI() else { return }
         authUI.delegate = self
-        let authViewController =
-            authUI.authViewController()
+        let authViewController = authUI.authViewController()
         present(authViewController, animated: true)
           print("SignUp!")
     }
-    @IBAction func logIn(_ sender: UIButton) {
-        print("Welcome back!")
-    }
-    }
+}
 extension LoginViewController: FUIAuthDelegate {
-    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
-        
+    func authUI(_ authUI: FUIAuth, user: User?, error: Error?) {
         if let error = error {
-            assertionFailure("Error signing in: \(error.localizedDescription)")
-            return
+            assertionFailure("Error signing in \(error.localizedDescription)")
         }
-        guard let user = authDataResult?.user
-            else {return}
-        
+        guard let user = user else { return }
         let userRef = Database.database().reference().child("users").child(user.uid)
-        userRef.observeSingleEvent(of: .value, with: {
-            (snapshot) in
-            if let user = User(snapshot: snapshot) {
-                print ("Welcome back, \(user.username).")
-            } else {
-                print("New user!")
-            }
-        })
+userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
+    UserService.show(forUID: user.uid) { (user) in
+        if user != nil {
+            self.view.window?.makeKeyAndVisible()
+        } else {
+                 self.performSegue(withIdentifier: "toCreateUsername", sender: self)
+            print("hello \(String(describing: user))")
+        }
     }
+}
+        )
+}
 }
