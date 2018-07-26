@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06BD649A2106B6EB0038F725 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06BD64992106B6EB0038F725 /* LoginStoryboard.storyboard */; };
+		06131E172108F113001408FA /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06131E162108F113001408FA /* Storyboard+Utility.swift */; };
+		06131E1B2109144D001408FA /* YourProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06131E1A2109144D001408FA /* YourProfileViewController.swift */; };
+		06BD649A2106B6EB0038F725 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06BD64992106B6EB0038F725 /* Login.storyboard */; };
 		06BD649C2106B71E0038F725 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD649B2106B71E0038F725 /* LoginViewController.swift */; };
 		06BD64A421078D420038F725 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BD64A321078D420038F725 /* GoogleService-Info.plist */; };
 		06BD64A62107A7F50038F725 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD64A52107A7F50038F725 /* Users.swift */; };
@@ -22,7 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		06BD64992106B6EB0038F725 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LoginStoryboard.storyboard; path = ../../../../Users/melissa126/Desktop/teamBuilder/personalProject/personalProject/StoryBoards/LoginStoryboard.storyboard; sourceTree = DEVELOPER_DIR; };
+		06131E162108F113001408FA /* Storyboard+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
+		06131E1A2109144D001408FA /* YourProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourProfileViewController.swift; sourceTree = "<group>"; };
+		06BD64992106B6EB0038F725 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Login.storyboard; path = ../../../../Users/melissa126/Desktop/teamBuilder/personalProject/personalProject/StoryBoards/Login.storyboard; sourceTree = DEVELOPER_DIR; };
 		06BD649B2106B71E0038F725 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		06BD64A321078D420038F725 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		06BD64A52107A7F50038F725 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -52,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06131E152108F0E8001408FA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				06131E162108F113001408FA /* Storyboard+Utility.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		06BD64A72107AB170038F725 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +95,7 @@
 		06F972D32106862C005AE63B /* personalProject */ = {
 			isa = PBXGroup;
 			children = (
+				06131E152108F0E8001408FA /* Extensions */,
 				06F972D42106862C005AE63B /* AppDelegate.swift */,
 				06F972E92106887D005AE63B /* Models */,
 				06F972E82106886F005AE63B /* Helpers */,
@@ -99,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				06F972DD2106862F005AE63B /* LaunchScreen.storyboard */,
-				06BD64992106B6EB0038F725 /* LoginStoryboard.storyboard */,
+				06BD64992106B6EB0038F725 /* Login.storyboard */,
 				06F972D82106862C005AE63B /* Main.storyboard */,
 			);
 			path = StoryBoards;
@@ -109,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				06F972D62106862C005AE63B /* ViewController.swift */,
+				06131E1A2109144D001408FA /* YourProfileViewController.swift */,
 				06BD649B2106B71E0038F725 /* LoginViewController.swift */,
 				06BD64AA2107AC370038F725 /* CreateUsernameViewController.swift */,
 			);
@@ -209,7 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06F972DF2106862F005AE63B /* LaunchScreen.storyboard in Resources */,
-				06BD649A2106B6EB0038F725 /* LoginStoryboard.storyboard in Resources */,
+				06BD649A2106B6EB0038F725 /* Login.storyboard in Resources */,
 				06F972DC2106862F005AE63B /* Assets.xcassets in Resources */,
 				06F972DA2106862C005AE63B /* Main.storyboard in Resources */,
 				06BD64A421078D420038F725 /* GoogleService-Info.plist in Resources */,
@@ -287,10 +301,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				06BD64A62107A7F50038F725 /* Users.swift in Sources */,
+				06131E1B2109144D001408FA /* YourProfileViewController.swift in Sources */,
 				06BD64A92107AB320038F725 /* UserService.swift in Sources */,
 				06BD64AB2107AC370038F725 /* CreateUsernameViewController.swift in Sources */,
 				06BD649C2106B71E0038F725 /* LoginViewController.swift in Sources */,
 				06F972D72106862C005AE63B /* ViewController.swift in Sources */,
+				06131E172108F113001408FA /* Storyboard+Utility.swift in Sources */,
 				06F972D52106862C005AE63B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

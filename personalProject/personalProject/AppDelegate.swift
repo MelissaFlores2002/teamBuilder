@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         -> Bool {
             FirebaseApp.configure()
            
-            let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: .main)
+            let storyboard = UIStoryboard(name: "Login", bundle: .main)
             
             // 2
             if let initialViewController = storyboard.instantiateInitialViewController() {
