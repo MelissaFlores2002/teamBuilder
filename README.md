@@ -71,13 +71,13 @@ Day 3 -
 
 Goal: Code in firebase 1/2 the code at least finished for the Login and Signup screens.
 
-What got finished ~
+What got finished ~ Coded in a dropdown menu, almost complete however I continue to struggle with some of the errors its throwing at me since I have had to code it in manually. I worked some more on the segue for after you sign up, but its still not working. 
 
 Day 4 - 
 
 Goal: All Code and buttons connected along with firebase finished for all Login and Signup screens.
 
-What got finished ~
+What got finished ~ Login/Signup page done! Got the username screen to work. Started learning about collectionviews and cells to impletement them. Looked at libraries for a good drop down menu to use. Home screen is almost complete.
 
 Day 5 - 
 
