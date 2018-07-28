@@ -58,12 +58,14 @@ Day 1 -
 Goal: Finish all storyboard views incuding contraints for at least the Login and Signup pages.
 
 What got finished ~
+Connected to firebase and GitHub, worked and semi finished the Login/Signup story board. Struggled alot with having the GitHub upload the file, however it worked with some help and now users can view the signup/login screen and click on the button; which currentlyhas no action.
 
 Day 2 - 
 
 Goal: Connect all IBoutlets and connect to firebase.
 
 What got finished ~
+Finished connecting to fire base, stuggled with connecting he segue after signing up to go to the next page instead of the signup page. Started on the UI elements for the tab bar controller along with the user class. All the profiles created on the app save and are usable to sign in without having to create an account(saves).
 
 Day 3 - 
 
