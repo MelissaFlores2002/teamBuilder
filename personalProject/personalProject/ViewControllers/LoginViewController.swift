@@ -53,9 +53,6 @@ class LoginViewController: UIViewController {
 
 }
 
-//extension LoginViewController: FUIAuthDelegate {
-
-//}
 
 extension LoginViewController: FUIAuthDelegate {
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
@@ -69,7 +66,6 @@ extension LoginViewController: FUIAuthDelegate {
 
         UserService.show(forUID: user.uid) { (user) in
             if let user = user {
-                self.performSegue(withIdentifier: "Main", sender: self)
                 User.setCurrent(user, writeToUserDefaults: true)
                 let initialViewController = UIStoryboard.initialViewController(for: .main)
                 self.view.window?.rootViewController = initialViewController
