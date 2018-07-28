@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="niJ-Qe-jdK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q3q-h4-sRj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,21 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="iXd-wA-Rkz">
-            <objects>
-                <navigationController navigationBarHidden="YES" id="3ei-I1-nNh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lrs-L0-XAA">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="niJ-Qe-jdK" kind="show" id="3pa-WB-DAB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LvZ-K3-4Nn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-966" y="209"/>
-        </scene>
         <!--LoginStoryboard-->
         <scene sceneID="yrD-pV-Z7E">
             <objects>
@@ -63,7 +48,7 @@
                                     <constraint firstAttribute="height" constant="125" id="HZU-9x-MfS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
-                                <state key="normal" title="SignUp or LogIn">
+                                <state key="normal" title="Sign Up or Log In">
                                     <color key="titleColor" red="0.83137254901960778" green="0.9137254901960784" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -82,14 +67,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pad-Xs-Igo"/>
                     </view>
+                    <navigationItem key="navigationItem" id="otg-Z7-XKI"/>
                     <connections>
+                        <outlet property="LogInButton" destination="byT-Zi-K0q" id="joB-gP-j4a"/>
                         <outlet property="view1" destination="Ake-Xu-Jvx" id="MZW-vE-ZLp"/>
                         <segue destination="r1E-H9-fl4" kind="show" identifier="toCreateUsername" id="af0-18-wL1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KWd-qg-vSF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-42.399999999999999" y="209.14542728635683"/>
+            <point key="canvasLocation" x="896.79999999999995" y="209.14542728635683"/>
         </scene>
         <!--Create Username View Controller-->
         <scene sceneID="Fnc-IL-gEx">
@@ -116,11 +103,11 @@
                                 <rect key="frame" x="16" y="45" width="343" height="155"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B68-rv-6aZ">
-                                        <rect key="frame" x="128" y="67" width="87" height="20.5"/>
+                                        <rect key="frame" x="89.5" y="58" width="164" height="39.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzN-gu-hkW">
-                                                <rect key="frame" x="0.0" y="0.0" width="87" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="164" height="39.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="33"/>
                                                 <color key="textColor" red="0.45882352939999999" green="0.27450980390000002" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -136,7 +123,7 @@
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35T-U5-Rs5">
                                 <rect key="frame" x="89" y="321" width="197" height="30"/>
-                                <color key="textColor" red="0.98039215690000003" green="0.89411764709999997" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.45882352939999999" green="0.27450980390000002" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -162,7 +149,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVg-4k-cFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="832.79999999999995" y="208.24587706146929"/>
+            <point key="canvasLocation" x="1772" y="208.24587706146929"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hUL-IR-VeC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="q3q-h4-sRj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mJy-et-KDy">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="niJ-Qe-jdK" kind="relationship" relationship="rootViewController" id="dzJ-sv-Nwk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cd6-NA-0dU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42.399999999999999" y="209.14542728635683"/>
         </scene>
     </scenes>
 </document>
