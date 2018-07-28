@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0604C95F210B8C3E0069D9E2 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0604C95E210B8C3E0069D9E2 /* CollectionViewCell.swift */; };
-		0604C961210BD0B70069D9E2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0604C960210BD0B70069D9E2 /* MainViewController.swift */; };
+		0604C965210D17680069D9E2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0604C964210D17680069D9E2 /* MainViewController.swift */; };
 		06131E172108F113001408FA /* Storyboard+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06131E162108F113001408FA /* Storyboard+Utility.swift */; };
 		06131E1B2109144D001408FA /* YourProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06131E1A2109144D001408FA /* YourProfileViewController.swift */; };
 		06BD649A2106B6EB0038F725 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06BD64992106B6EB0038F725 /* Login.storyboard */; };
@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		0604C95E210B8C3E0069D9E2 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		0604C960210BD0B70069D9E2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0604C964210D17680069D9E2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		06131E162108F113001408FA /* Storyboard+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.swift"; sourceTree = "<group>"; };
 		06131E1A2109144D001408FA /* YourProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourProfileViewController.swift; sourceTree = "<group>"; };
 		06BD64992106B6EB0038F725 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Login.storyboard; path = ../../../../Users/melissa126/Desktop/teamBuilder/personalProject/personalProject/StoryBoards/Login.storyboard; sourceTree = DEVELOPER_DIR; };
@@ -124,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				06131E1A2109144D001408FA /* YourProfileViewController.swift */,
-				0604C960210BD0B70069D9E2 /* MainViewController.swift */,
+				0604C964210D17680069D9E2 /* MainViewController.swift */,
 				06BD649B2106B71E0038F725 /* LoginViewController.swift */,
 				06BD64AA2107AC370038F725 /* CreateUsernameViewController.swift */,
 			);
@@ -309,7 +309,7 @@
 				06BD64A92107AB320038F725 /* UserService.swift in Sources */,
 				06BD64AB2107AC370038F725 /* CreateUsernameViewController.swift in Sources */,
 				06BD649C2106B71E0038F725 /* LoginViewController.swift in Sources */,
-				0604C961210BD0B70069D9E2 /* MainViewController.swift in Sources */,
+				0604C965210D17680069D9E2 /* MainViewController.swift in Sources */,
 				06131E172108F113001408FA /* Storyboard+Utility.swift in Sources */,
 				06F972D52106862C005AE63B /* AppDelegate.swift in Sources */,
 			);
