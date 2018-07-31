@@ -56,7 +56,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.85098039219999999" green="0.67843137249999996" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.84705882349999995" green="0.8980392157" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ake-Xu-Jvx" firstAttribute="top" secondItem="pad-Xs-Igo" secondAttribute="top" constant="-25" id="03r-eH-nUe"/>
                             <constraint firstItem="Ake-Xu-Jvx" firstAttribute="leading" secondItem="pad-Xs-Igo" secondAttribute="leading" id="3Lc-Wk-IWA"/>
@@ -103,11 +103,11 @@
                                 <rect key="frame" x="16" y="45" width="343" height="155"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B68-rv-6aZ">
-                                        <rect key="frame" x="89.5" y="58" width="164" height="39.5"/>
+                                        <rect key="frame" x="96.5" y="56" width="151.5" height="43"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzN-gu-hkW">
-                                                <rect key="frame" x="0.0" y="0.0" width="164" height="39.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="151.5" height="43"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="33"/>
                                                 <color key="textColor" red="0.45882352939999999" green="0.27450980390000002" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -123,13 +123,13 @@
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35T-U5-Rs5">
                                 <rect key="frame" x="89" y="321" width="197" height="30"/>
-                                <color key="backgroundColor" red="0.82470615928308" green="1" blue="0.95312817417459161" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.45882352939999999" green="0.27450980390000002" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.85098039219999999" green="0.67843137249999996" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.84705882349999995" green="0.8980392157" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RAy-Bp-ZUI" firstAttribute="leading" secondItem="nqc-g1-j6g" secondAttribute="leading" constant="105" id="ZgA-49-koZ"/>
                             <constraint firstItem="nqc-g1-j6g" firstAttribute="trailing" secondItem="RAy-Bp-ZUI" secondAttribute="trailing" constant="105" id="ZiZ-yM-ecx"/>
@@ -146,11 +146,20 @@
                     <connections>
                         <outlet property="nextButton" destination="RAy-Bp-ZUI" id="oFj-Ch-fTs"/>
                         <outlet property="usernameTextField" destination="35T-U5-Rs5" id="5Zs-qT-6Uh"/>
+                        <segue destination="E64-xo-kWb" kind="show" identifier="Main" id="duq-1T-MS3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVg-4k-cFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1772" y="208.24587706146929"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="WSY-cr-3td">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="E64-xo-kWb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c1E-SC-suP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2424" y="94"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hUL-IR-VeC">
