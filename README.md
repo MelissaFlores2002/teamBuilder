@@ -1,5 +1,5 @@
 # TeamBuilder
-The app is to help creators find projects in their town/city, wether they are a creator full time or its just a hobbie. This also reaches out to different types of creators, so there is not limit to what you can create!
+The app is to help creators find projects in their town/city, wether they are a creator full time or its just a hobbie. This also reaches out to different types of creators, so there is no limit to what you can create!
 ​
 ## Audience
 This is for the creators, ranging from the hard core coders, to engineers, to artists.They would use it to find a project to either put on the market or as a little side hobbie.
