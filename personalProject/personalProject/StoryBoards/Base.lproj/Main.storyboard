@@ -328,6 +328,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7e-RA-PXw">
+                                <rect key="frame" x="53" y="243" width="274" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.84705882349999995" green="0.8980392157" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="9bH-G0-OCK"/>
@@ -404,6 +411,7 @@
                                                         <color key="titleColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
+                                                        <action selector="moreInfoButtonPressed:" destination="adI-ey-5QT" eventType="touchUpInside" id="et2-pb-55M"/>
                                                         <segue destination="7pN-Gy-L6Y" kind="show" id="05G-Yd-1NE"/>
                                                     </connections>
                                                 </button>
@@ -422,7 +430,10 @@
                                             <constraint firstItem="Bve-xb-NQk" firstAttribute="top" secondItem="adI-ey-5QT" secondAttribute="top" id="kI9-uK-rXf"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="moreInfoButton" destination="pgi-Rh-mJM" id="6xP-Jw-kLM"/>
                                             <outlet property="nameOfTheProject" destination="Bve-xb-NQk" id="lDP-13-dkw"/>
+                                            <outlet property="who" destination="A9y-Tf-R1x" id="kDc-gc-DaL"/>
+                                            <outlet property="why" destination="7LK-PO-NM0" id="MmP-vY-S4X"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -441,8 +452,8 @@
                                         <color key="textColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5H-Nx-pHU">
-                                        <rect key="frame" x="337" y="108" width="30" height="33"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5H-Nx-pHU">
+                                        <rect key="frame" x="337" y="115" width="30" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.84705882349999995" green="0.8980392157" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>

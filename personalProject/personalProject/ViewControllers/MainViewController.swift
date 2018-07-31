@@ -9,19 +9,24 @@
 import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-   
+    let reuseIdentifier = "cell"
+    var items = ["1", "2", "3"]
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+   
+        return self.items.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
+        cell.nameOfTheProject.text = self.items[indexPath.item]
+        cell.backgroundColor = UIColor.blue
+        return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-    
-    
-    
+        print("You selected cell #\(indexPath.item)!")
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,3 +51,4 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     */
 
 }
+
