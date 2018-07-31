@@ -9,10 +9,9 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageOfProject: UIImageView!
+   
     @IBOutlet weak var nameOfTheProject: UILabel!
-    @IBOutlet weak var whyLabel: UILabel!
-    
+
     
     
     
