@@ -1,5 +1,5 @@
 # TeamBuilder
-The app is to help creators find projects in their town/city, wether they are a creator full time or its just a hobbie. This also reaches out to different types of creators, so there is not limit to what you can create!
+The app is to help creators find projects in their town/city, wether they are a creator full time or its just a hobbie. This also reaches out to different types of creators, so there is no limit to what you can create!
 ​
 ## Audience
 This is for the creators, ranging from the hard core coders, to engineers, to artists.They would use it to find a project to either put on the market or as a little side hobbie.
@@ -83,17 +83,18 @@ Day 5 -
 
 Goal: Polish, round corners, color palet, ect. Continue onto next views with code.
 
-What got finished ~
+What got finished ~ Home screen is completeed, created a class for the collection view cells, and finished the look of the home screen.
 
 Feedback on finished Login and Signup; 
+Seems kind of complicated
 
 ​
 ## Week2 - Finish Features
 Day 1 - 
 
-Goal:
+Goal: Have the user sign in and stay signed in as well as having the collection view mostly coded.
 
-What got finished ~
+What got finished ~ Finished all storyboard elements and segues, figured out a base color palet.
 
 Day 2 - 
 
