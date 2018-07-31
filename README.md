@@ -94,7 +94,7 @@ Day 1 -
 
 Goal: Have the user sign in and stay signed in as well as having the collection view mostly coded.
 
-What got finished ~ Finished all storyboard elements and segues, figured out a base color palet.
+What got finished ~ Finished all storyboard elements and segues, figured out a base color palet. The stayed signed in method is coded and works properly.
 
 Day 2 - 
 
