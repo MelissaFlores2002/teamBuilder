@@ -116,6 +116,7 @@
                                             <color key="titleColor" red="0.88601892597876819" green="0.90756858855295885" blue="0.90800029765530887" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
+                                            <action selector="logoutButtonPressed:" destination="skE-Zd-IMS" eventType="touchUpInside" id="gS4-g2-led"/>
                                             <segue destination="Dz1-Xv-1s5" kind="show" id="6I3-yK-RiC"/>
                                         </connections>
                                     </button>
@@ -163,6 +164,14 @@
                         <viewLayoutGuide key="safeArea" id="acD-cp-OYm"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="dE2-MC-Kng"/>
+                    <connections>
+                        <outlet property="addedProjectsAndRequestedLabel" destination="Uz2-mJ-XAv" id="8bz-Oz-Rde"/>
+                        <outlet property="collectionViewAddedProjects" destination="Dsx-tI-krT" id="tQQ-aE-bYl"/>
+                        <outlet property="collectionViewYourProjects" destination="eLa-Vu-YrQ" id="Weh-g3-bR9"/>
+                        <outlet property="logoutButton" destination="IWB-fs-7tJ" id="736-Gg-Zyo"/>
+                        <outlet property="profileTitleLabel" destination="BH3-8R-aur" id="n4d-5n-pHx"/>
+                        <outlet property="yourProjectsAndRequestsOnThemLabel" destination="k3L-HO-aeO" id="rBx-i0-5VD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyQ-LP-Emp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -184,6 +193,7 @@
                                     <color key="titleColor" red="0.81960784310000001" green="0.81960784310000001" blue="0.81960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="logoutButtonPressed:" destination="Dz1-Xv-1s5" eventType="touchUpInside" id="RQ7-sf-O8W"/>
                                     <segue destination="40V-jQ-tT7" kind="show" id="VBY-YA-dPd"/>
                                 </connections>
                             </button>
@@ -195,6 +205,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FI7-3f-NmH"/>
                     </view>
+                    <connections>
+                        <outlet property="logoutButton" destination="8xp-lu-1w3" id="TXu-YW-EUD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gF-gy-7WD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -591,6 +604,7 @@
                     <navigationItem key="navigationItem" id="oHl-lk-WEn"/>
                     <connections>
                         <outlet property="collectionView" destination="Jn9-j9-jU0" id="UiL-nF-Ofk"/>
+                        <outlet property="titleLabel" destination="R8J-bv-iBH" id="bfb-3J-mYc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1q-wY-QMm" userLabel="First Responder" sceneMemberID="firstResponder"/>

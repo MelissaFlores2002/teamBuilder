@@ -9,25 +9,29 @@
 import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+
+    
     let reuseIdentifier = "cell"
     var items = ["1", "2", "3"]
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-   
+        
         return self.items.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
-//        cell.nameOfTheProject.text = self.items[indexPath.item]
-//        cell.backgroundColor = UIColor.blue
+        //        cell.nameOfTheProject.text = self.items[indexPath.item]
+        //        cell.backgroundColor = UIColor.blue
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
         print("You selected cell #\(indexPath.item)!")
     }
-
-    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

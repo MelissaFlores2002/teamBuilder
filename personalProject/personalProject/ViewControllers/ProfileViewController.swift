@@ -9,13 +9,33 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+   
+    @IBOutlet weak var profileTitleLabel: UILabel!
+    @IBOutlet weak var yourProjectsAndRequestsOnThemLabel: UILabel!
+    @IBOutlet weak var addedProjectsAndRequestedLabel: UILabel!
+    @IBOutlet weak var collectionViewYourProjects: UICollectionView!
+    @IBOutlet weak var collectionViewAddedProjects: UICollectionView!
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBAction func logoutButtonPressed(_ sender: UIButton) {
+    
+    }
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+  
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

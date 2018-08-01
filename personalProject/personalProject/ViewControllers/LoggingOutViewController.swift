@@ -10,11 +10,24 @@ import UIKit
 
 class LoggingOutViewController: UIViewController {
 
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBAction func logoutButtonPressed(_ sender: UIButton) {
+    
+    
+    }
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
