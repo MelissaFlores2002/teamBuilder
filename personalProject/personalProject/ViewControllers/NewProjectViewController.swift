@@ -9,13 +9,54 @@
 import UIKit
 
 class NewProjectViewController: UIViewController {
-
+   
+    @IBOutlet weak var newProjectTitle: UILabel!
+    @IBOutlet weak var nameTitleLabel: UILabel!
+    @IBOutlet weak var inputNameTextField: UITextField!
+    @IBOutlet weak var whoIsNeededTitleLabel: UILabel!
+    @IBOutlet weak var inputWhoYouNeedTextField: UITextField!
+    @IBOutlet weak var projectDescriptionTitleLabel: UILabel!
+    @IBOutlet weak var inputProjectDescriptionTextField: UITextField!
+    @IBOutlet weak var whyTitleLabel: UILabel!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+    
+    
+    }
+    @IBOutlet weak var confirmButton: UIButton!
+    @IBAction func confirmButtonPressed(_ sender: UIButton) {
+   
+    
+    }
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

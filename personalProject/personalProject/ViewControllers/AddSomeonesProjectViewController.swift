@@ -10,11 +10,49 @@ import UIKit
 
 class AddSomeonesProjectViewController: UIViewController {
 
+    @IBOutlet weak var addTitle: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var projectNameLabel: UILabel!
+    @IBOutlet weak var whoIsNeededQuestionLabel: UILabel!
+    @IBOutlet weak var whoIsNeededAnsweredLabel: UILabel!
+    @IBOutlet weak var projectDesciptionTitleLabel: UILabel!
+    @IBOutlet weak var projectDescrition: UILabel!
+    @IBOutlet weak var whyQuestionLabel: UILabel!
+    @IBOutlet weak var whyExplanationLabel: UILabel!
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+   
+    
+    }
+    
+    @IBOutlet weak var addRequestButton: UIButton!
+    @IBAction func addRequestButtonPressed(_ sender: UIButton) {
+ 
+    
+    }
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
