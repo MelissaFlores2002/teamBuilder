@@ -21,14 +21,12 @@ class AddSomeonesProjectViewController: UIViewController {
     @IBOutlet weak var whyExplanationLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
-   
-    
+   dismiss(animated: true, completion: nil)
     }
     
     @IBOutlet weak var addRequestButton: UIButton!
     @IBAction func addRequestButtonPressed(_ sender: UIButton) {
- 
-    
+ dismiss(animated: true, completion: nil)
     }
     
     
