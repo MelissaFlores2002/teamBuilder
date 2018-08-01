@@ -31,6 +31,8 @@ class LoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        LogInButton.layer.cornerRadius = 50
+        
     }
 
 //    func authUI(_ authUI: FUIAuth, user: User?, error: Error?) {

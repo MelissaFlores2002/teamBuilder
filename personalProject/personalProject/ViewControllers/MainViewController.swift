@@ -17,8 +17,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
-        cell.nameOfTheProject.text = self.items[indexPath.item]
-        cell.backgroundColor = UIColor.blue
+//        cell.nameOfTheProject.text = self.items[indexPath.item]
+//        cell.backgroundColor = UIColor.blue
         return cell
     }
     
@@ -27,10 +27,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         print("You selected cell #\(indexPath.item)!")
     }
 
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+   collectionView.register(UINib(nibName: "name", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
+        
         // Do any additional setup after loading the view.
     }
 
