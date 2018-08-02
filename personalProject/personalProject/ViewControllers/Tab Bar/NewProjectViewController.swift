@@ -12,16 +12,18 @@ class NewProjectViewController: UIViewController {
    
     @IBOutlet weak var newProjectTitle: UILabel!
     @IBOutlet weak var nameTitleLabel: UILabel!
-    @IBOutlet weak var inputNameTextField: UITextField!
+    @IBOutlet weak var inputNameTextField: InputNumberTextField!
     @IBOutlet weak var whoIsNeededTitleLabel: UILabel!
-    @IBOutlet weak var inputWhoYouNeedTextField: UITextField!
+    @IBOutlet weak var inputWhoYouNeedTextField: InputNumberTextField!
     @IBOutlet weak var projectDescriptionTitleLabel: UILabel!
-    @IBOutlet weak var inputProjectDescriptionTextField: UITextField!
+    @IBOutlet weak var inputProjectDescriptionTextField: InputNumberTextField!
     @IBOutlet weak var whyTitleLabel: UILabel!
+    @IBOutlet weak var locationTextField: InputNumberTextField!
+    @IBOutlet weak var locationTitleLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
     
-    
+        
     }
     @IBOutlet weak var confirmButton: UIButton!
     @IBAction func confirmButtonPressed(_ sender: UIButton) {

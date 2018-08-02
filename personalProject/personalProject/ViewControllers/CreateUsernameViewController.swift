@@ -22,8 +22,8 @@ class CreateUsernameViewController: UIViewController {
         nextButton.layer.cornerRadius = 50
         
         usernameTextField.doneButtonPressed = {
-            if self.isFirstResponder {
-                self.resignFirstResponder()
+            if self.usernameTextField.isFirstResponder {
+                self.usernameTextField.resignFirstResponder()
             }
         }
     }

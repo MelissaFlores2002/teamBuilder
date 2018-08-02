@@ -18,6 +18,8 @@
 		0691A3B9211230F500401DA7 /* AddSomeonesProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3B8211230F500401DA7 /* AddSomeonesProjectViewController.swift */; };
 		0691A3BB2112312F00401DA7 /* LoggingOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3BA2112312F00401DA7 /* LoggingOutViewController.swift */; };
 		0691A3BD21136E7700401DA7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3BC21136E7700401DA7 /* TabBarViewController.swift */; };
+		0691A3C021137F0A00401DA7 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3BF21137F0A00401DA7 /* ProjectService.swift */; };
+		0691A3C221137F1600401DA7 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3C121137F1500401DA7 /* Project.swift */; };
 		06BD649A2106B6EB0038F725 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06BD64992106B6EB0038F725 /* Login.storyboard */; };
 		06BD649C2106B71E0038F725 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD649B2106B71E0038F725 /* LoginViewController.swift */; };
 		06BD64A421078D420038F725 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BD64A321078D420038F725 /* GoogleService-Info.plist */; };
@@ -43,6 +45,8 @@
 		0691A3B8211230F500401DA7 /* AddSomeonesProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSomeonesProjectViewController.swift; sourceTree = "<group>"; };
 		0691A3BA2112312F00401DA7 /* LoggingOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingOutViewController.swift; sourceTree = "<group>"; };
 		0691A3BC21136E7700401DA7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		0691A3BF21137F0A00401DA7 /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProjectService.swift; path = personalProject/ViewControllers/ProjectService.swift; sourceTree = SOURCE_ROOT; };
+		0691A3C121137F1500401DA7 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		06BD64992106B6EB0038F725 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Login.storyboard; path = ../../../../Users/melissa126/Desktop/teamBuilder/personalProject/personalProject/StoryBoards/Login.storyboard; sourceTree = DEVELOPER_DIR; };
 		06BD649B2106B71E0038F725 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		06BD64A321078D420038F725 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				06BD64A82107AB320038F725 /* UserService.swift */,
+				0691A3BF21137F0A00401DA7 /* ProjectService.swift */,
 			);
 			name = Services;
 			path = "Models/New Group";
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				06BD64A52107A7F50038F725 /* Users.swift */,
+				0691A3C121137F1500401DA7 /* Project.swift */,
 				0691A3B2211227F200401DA7 /* CollectionViewCell.swift */,
 			);
 			path = Models;
@@ -340,12 +346,14 @@
 				06BD64AB2107AC370038F725 /* CreateUsernameViewController.swift in Sources */,
 				0691A3AB2110E98F00401DA7 /* Constants.swift in Sources */,
 				0691A3AD2111306500401DA7 /* InputNumberTextField.swift in Sources */,
+				0691A3C021137F0A00401DA7 /* ProjectService.swift in Sources */,
 				0691A3BB2112312F00401DA7 /* LoggingOutViewController.swift in Sources */,
 				0691A3B52112309C00401DA7 /* ProfileViewController.swift in Sources */,
 				06BD649C2106B71E0038F725 /* LoginViewController.swift in Sources */,
 				0604C965210D17680069D9E2 /* MainViewController.swift in Sources */,
 				06131E172108F113001408FA /* Storyboard+Utility.swift in Sources */,
 				0691A3B7211230C900401DA7 /* NewProjectViewController.swift in Sources */,
+				0691A3C221137F1600401DA7 /* Project.swift in Sources */,
 				06F972D52106862C005AE63B /* AppDelegate.swift in Sources */,
 				0691A3B3211227F200401DA7 /* CollectionViewCell.swift in Sources */,
 			);

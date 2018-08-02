@@ -16,7 +16,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     
     let reuseIdentifier = "cell"
-    var items = ["1", "2", "3"]
+    var items = [" "]
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.items.count
     }
