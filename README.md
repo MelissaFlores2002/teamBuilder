@@ -98,13 +98,13 @@ What got finished ~ Finished all storyboard elements and segues, figured out a b
 
 Day 2 - 
 
-Goal: UIStorybord finished, tab bar controller to come up at the bottom of the screen and properly function with shifting back and forth. Making the collection views only appear when a project has been created. 
+Goal: UIStorybord finished, all IB outlets and Actions.
 
 What got finished ~ All view controllers and IBoutlet/Actions have been created. When you are logged in you stay logged in, so you start at the home screen and it shows up.                    
 
 Day 3 - 
 
-Goal:
+Goal: Get the tab bar controller to come up at the bottom of the screen and properly function with shifting back and forth. Making the collection views only appear when a project has been created. 
 
 What got finished ~
 
