@@ -17,6 +17,7 @@
 		0691A3B7211230C900401DA7 /* NewProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3B6211230C900401DA7 /* NewProjectViewController.swift */; };
 		0691A3B9211230F500401DA7 /* AddSomeonesProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3B8211230F500401DA7 /* AddSomeonesProjectViewController.swift */; };
 		0691A3BB2112312F00401DA7 /* LoggingOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3BA2112312F00401DA7 /* LoggingOutViewController.swift */; };
+		0691A3BD21136E7700401DA7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3BC21136E7700401DA7 /* TabBarViewController.swift */; };
 		06BD649A2106B6EB0038F725 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06BD64992106B6EB0038F725 /* Login.storyboard */; };
 		06BD649C2106B71E0038F725 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD649B2106B71E0038F725 /* LoginViewController.swift */; };
 		06BD64A421078D420038F725 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06BD64A321078D420038F725 /* GoogleService-Info.plist */; };
@@ -41,6 +42,7 @@
 		0691A3B6211230C900401DA7 /* NewProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectViewController.swift; sourceTree = "<group>"; };
 		0691A3B8211230F500401DA7 /* AddSomeonesProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSomeonesProjectViewController.swift; sourceTree = "<group>"; };
 		0691A3BA2112312F00401DA7 /* LoggingOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingOutViewController.swift; sourceTree = "<group>"; };
+		0691A3BC21136E7700401DA7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		06BD64992106B6EB0038F725 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Login.storyboard; path = ../../../../Users/melissa126/Desktop/teamBuilder/personalProject/personalProject/StoryBoards/Login.storyboard; sourceTree = DEVELOPER_DIR; };
 		06BD649B2106B71E0038F725 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		06BD64A321078D420038F725 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -76,6 +78,17 @@
 				06131E162108F113001408FA /* Storyboard+Utility.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0691A3BE21136FB400401DA7 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				0691A3B6211230C900401DA7 /* NewProjectViewController.swift */,
+				0604C964210D17680069D9E2 /* MainViewController.swift */,
+				0691A3B42112309C00401DA7 /* ProfileViewController.swift */,
+				0691A3BC21136E7700401DA7 /* TabBarViewController.swift */,
+			);
+			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
 		06BD64A72107AB170038F725 /* Services */ = {
@@ -135,14 +148,12 @@
 		06F972E72106884F005AE63B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				06131E1A2109144D001408FA /* YourProfileViewController.swift */,
-				0691A3B42112309C00401DA7 /* ProfileViewController.swift */,
-				0691A3B6211230C900401DA7 /* NewProjectViewController.swift */,
-				0604C964210D17680069D9E2 /* MainViewController.swift */,
+				0691A3BE21136FB400401DA7 /* Tab Bar */,
 				06BD649B2106B71E0038F725 /* LoginViewController.swift */,
 				0691A3B8211230F500401DA7 /* AddSomeonesProjectViewController.swift */,
 				0691A3BA2112312F00401DA7 /* LoggingOutViewController.swift */,
 				06BD64AA2107AC370038F725 /* CreateUsernameViewController.swift */,
+				06131E1A2109144D001408FA /* YourProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -321,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0691A3BD21136E7700401DA7 /* TabBarViewController.swift in Sources */,
 				06BD64A62107A7F50038F725 /* Users.swift in Sources */,
 				0691A3B9211230F500401DA7 /* AddSomeonesProjectViewController.swift in Sources */,
 				06131E1B2109144D001408FA /* YourProfileViewController.swift in Sources */,

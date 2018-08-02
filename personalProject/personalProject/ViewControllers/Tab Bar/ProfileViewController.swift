@@ -1,35 +1,42 @@
 //
-//  LoggingOutViewController.swift
+//  ProfileViewController.swift
 //  personalProject
 //
 //  Created by Melissa Flores on 8/1/18.
 //  Copyright © 2018 Melissa Flores. All rights reserved.
 //
-import Foundation
+
 import UIKit
-import Firebase
-import FirebaseAuth
-import FirebaseUI
-import FirebaseDatabase
 
-class LoggingOutViewController: UIViewController {
-
+class ProfileViewController: UIViewController {
+   
+    @IBOutlet weak var profileTitleLabel: UILabel!
+    @IBOutlet weak var yourProjectsAndRequestsOnThemLabel: UILabel!
+    @IBOutlet weak var addedProjectsAndRequestedLabel: UILabel!
+    @IBOutlet weak var collectionViewYourProjects: UICollectionView!
+    @IBOutlet weak var collectionViewAddedProjects: UICollectionView!
     @IBOutlet weak var logoutButton: UIButton!
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
-        UserDefaults.standard.set(false, forKey: "isNotUserLoggedIn")
-        UserDefaults.standard.synchronize()
+    
     }
+    
+    
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logoutButton.layer.cornerRadius = 50
 
+        
         // Do any additional setup after loading the view.
     }
-    
-    
-    
 
+  
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,8 +53,4 @@ class LoggingOutViewController: UIViewController {
     }
     */
 
-}
-
-extension LoggingOutViewController: FUIAuthDelegate{
-    
 }

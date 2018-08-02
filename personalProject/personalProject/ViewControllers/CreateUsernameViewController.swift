@@ -14,12 +14,18 @@ import FirebaseAuth
 
 class CreateUsernameViewController: UIViewController {
 
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var usernameTextField: InputNumberTextField!
     @IBOutlet weak var nextButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextButton.layer.cornerRadius = 6
+        nextButton.layer.cornerRadius = 50
+        
+        usernameTextField.doneButtonPressed = {
+            if self.isFirstResponder {
+                self.resignFirstResponder()
+            }
+        }
     }
 
 

@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
         LogInButton.layer.cornerRadius = 50
         
     }
-
+    
 //    func authUI(_ authUI: FUIAuth, user: User?, error: Error?) {
 //        if let error = error {
 //            assertionFailure("Error signing in \(error.localizedDescription)")
@@ -68,6 +68,8 @@ extension LoginViewController: FUIAuthDelegate {
  let userRef = Database.database().reference().child("users").child(user.uid)
         UserService.show(forUID: user.uid) { (user) in
             if let user = user {
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                UserDefaults.standard.synchronize()
 //                User.setCurrent(user, writeToUserDefaults: true)
                 let initialViewController = UIStoryboard.initialViewController(for: .main)
                 self.view.window?.rootViewController = initialViewController
