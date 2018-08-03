@@ -9,6 +9,8 @@
 import UIKit
 
 class NewProjectViewController: UIViewController {
+    
+    let user = try! JSONDecoder().decode(User.self, from: UserDefaults.standard.value(forKey: "currentUser") as! Data)
    
     @IBOutlet weak var newProjectTitle: UILabel!
     @IBOutlet weak var nameTitleLabel: UILabel!
@@ -20,15 +22,19 @@ class NewProjectViewController: UIViewController {
     @IBOutlet weak var whyTitleLabel: UILabel!
     @IBOutlet weak var locationTextField: InputNumberTextField!
     @IBOutlet weak var locationTitleLabel: UILabel!
+    @IBOutlet weak var inputWhy: InputNumberTextField!
     @IBOutlet weak var cancelButton: UIButton!
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
     
         
     }
     @IBOutlet weak var confirmButton: UIButton!
-    @IBAction func confirmButtonPressed(_ sender: UIButton) {
    
     
+    @IBAction func confirmButtonPressed(_ sender: UIButton) {
+        ProjectService.create(for: Project(name: inputNameTextField.text!, location: locationTextField.text!, description: inputProjectDescriptionTextField.text!, why: inputWhy.text!, whoIsNeeded: inputWhoYouNeedTextField.text!, creatorUID: user.username))
+        
+        self.performSegue(withIdentifier: "BackToMain", sender: self)
     }
     
     

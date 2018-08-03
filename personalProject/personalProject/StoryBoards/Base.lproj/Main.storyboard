@@ -175,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyQ-LP-Emp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3447" y="1255"/>
+            <point key="canvasLocation" x="5431" y="-210"/>
         </scene>
         <!--Logging Out View Controller-->
         <scene sceneID="1th-59-1h9">
@@ -211,7 +211,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gF-gy-7WD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4785" y="1281"/>
+            <point key="canvasLocation" x="5321" y="663"/>
         </scene>
         <!--Login-->
         <scene sceneID="CZc-zM-Ouh">
@@ -219,7 +219,7 @@
                 <viewControllerPlaceholder storyboardName="Login" id="40V-jQ-tT7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sC9-qk-kFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5680" y="730"/>
+            <point key="canvasLocation" x="6084" y="662"/>
         </scene>
         <!--Add Someones Project View Controller-->
         <scene sceneID="eFc-Z2-KSZ">
@@ -406,7 +406,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dfg-AK-IPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5144.8000000000002" y="492.50374812593708"/>
+            <point key="canvasLocation" x="4234" y="663"/>
         </scene>
         <!--New Project View Controller-->
         <scene sceneID="Bga-0y-rcY">
@@ -446,6 +446,7 @@
                                 </state>
                                 <connections>
                                     <action selector="confirmButtonPressed:" destination="nKG-Tu-imb" eventType="touchUpInside" id="Q2v-pV-xdm"/>
+                                    <segue destination="asC-uo-cmy" kind="show" id="7gh-jd-ZeO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXz-aW-p3p">
@@ -554,6 +555,7 @@
                         <outlet property="inputNameTextField" destination="Z4O-s4-QTh" id="iFc-X2-e3I"/>
                         <outlet property="inputProjectDescriptionTextField" destination="zgc-oW-yxx" id="3yr-z8-R4f"/>
                         <outlet property="inputWhoYouNeedTextField" destination="G7e-RA-PXw" id="UtG-g7-Sdi"/>
+                        <outlet property="inputWhy" destination="fl9-Yf-NSg" id="hfc-uF-unK"/>
                         <outlet property="locationTextField" destination="XSb-wA-RFI" id="qab-Os-NDh"/>
                         <outlet property="locationTitleLabel" destination="dhy-aD-oIZ" id="onN-LO-1n2"/>
                         <outlet property="nameTitleLabel" destination="tcm-d4-sYg" id="pR2-XG-xex"/>
@@ -565,7 +567,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wYM-Td-umj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3404" y="492.50374812593708"/>
+            <point key="canvasLocation" x="4489" y="-210"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="AIA-dt-7yN">
@@ -584,7 +586,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhi-Tf-mKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2508" y="529"/>
+            <point key="canvasLocation" x="4489" y="-1003"/>
         </scene>
         <!--Main-->
         <scene sceneID="ooK-SH-gND">
@@ -598,17 +600,17 @@
                                 <rect key="frame" x="0.0" y="165" width="375" height="453"/>
                                 <color key="backgroundColor" red="0.90800845562067634" green="0.90362194134231566" blue="0.91239496989903712" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mmb-hL-fO5">
-                                    <size key="itemSize" width="171" height="146"/>
+                                    <size key="itemSize" width="172" height="187"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="hPK-JA-CKs" customClass="CollectionViewCell" customModule="personalProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="172" height="156"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="172" height="187"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="172" height="156"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="172" height="187"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oY8-tm-wLi">
@@ -619,21 +621,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Why:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeS-9v-3fb">
-                                                    <rect key="frame" x="9" y="48" width="46" height="24"/>
+                                                    <rect key="frame" x="11" y="110" width="37" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Who:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfl-NK-vYL">
-                                                    <rect key="frame" x="9" y="82" width="41" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gfp-l5-GQt">
-                                                    <rect key="frame" x="10" y="112" width="152" height="34"/>
+                                                    <rect key="frame" x="10" y="142" width="152" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.45882352939999999" green="0.27450980390000002" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -644,10 +639,38 @@
                                                         <segue destination="7pN-Gy-L6Y" kind="show" id="V5Y-QF-U4s"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKe-xD-lHc">
+                                                    <rect key="frame" x="9" y="52" width="71" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRy-kJ-l7U">
+                                                    <rect key="frame" x="78" y="110" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGg-Bx-gud">
+                                                    <rect key="frame" x="79" y="83" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Who:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfl-NK-vYL">
+                                                    <rect key="frame" x="11" y="83" width="47" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <viewLayoutGuide key="safeArea" id="XpB-L0-Puw"/>
-                                        <size key="customSize" width="172" height="156"/>
+                                        <size key="customSize" width="172" height="187"/>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -724,6 +747,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="E1a-hP-57U"/>
-        <segue reference="SIz-cm-q7v"/>
+        <segue reference="V5Y-QF-U4s"/>
     </inferredMetricsTieBreakers>
 </document>

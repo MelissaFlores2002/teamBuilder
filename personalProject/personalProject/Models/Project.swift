@@ -17,13 +17,15 @@ class Project {
     let description: String
     let why: String
     let whoIsNeeded: String
+    let creatorUID: String
     
-    init(name: String, location: String, description: String, why: String, whoIsNeeded: String) {
+    init(name: String, location: String, description: String, why: String, whoIsNeeded: String, creatorUID: String) {
         self.name = name
         self.location = location
         self.description = description
         self.why = why
         self.whoIsNeeded = whoIsNeeded
+        self.creatorUID = creatorUID
     }
 //
 //    init(snapshot){
@@ -37,5 +39,5 @@ class Project {
              "whoIsNeeded" : self.whoIsNeeded]
     
     }
-    
+
 }

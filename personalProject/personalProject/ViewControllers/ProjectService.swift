@@ -10,19 +10,29 @@ import Foundation
 import FirebaseStorage
 import FirebaseDatabase
 
+var projnum: Int = 0
 
 struct ProjectService {
-
+   
+    
+    
+//    static func create(  :) {
+    let user = try! JSONDecoder().decode(User.self, from: UserDefaults.standard.value(forKey: "currentUser") as! Data)
     let currentUser = User.current
     
-    Project.UserUID.autoUID
-    
-    
-    static func create(for project: Project) {
+       static func create(for project: Project) {
        let addRef = Database.database().reference().child("project")
         addRef.observeSingleEvent(of: .value, with: { (snapshot) in
-        }
+            addRef.child("\(currentUser)project\(projnum)").setValue(project.toDictionary())
+            projnum += 1
+    }
     )}
+    static func show(){
+        let addRef = Database.database().reference().child("project")
+        addRef.observeSingleEvent(of: .value) { (snapshot) in
+            addRef.child("project: ")
+        }
+    }
     
 //    let project = Project()
 //
