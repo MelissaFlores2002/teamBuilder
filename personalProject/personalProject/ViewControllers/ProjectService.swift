@@ -15,6 +15,9 @@ struct ProjectService {
 
     let currentUser = User.current
     
+    static func create(for project: Project) {
+       let addRef = Database.database().reference().child("project")
+    }
     
 //    let project = Project()
 //
