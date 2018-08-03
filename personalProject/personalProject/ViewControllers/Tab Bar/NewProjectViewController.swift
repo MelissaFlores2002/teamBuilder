@@ -61,6 +61,9 @@ class NewProjectViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        cancelButton.layer.cornerRadius = 10
+        confirmButton.layer.cornerRadius = 10
+
         // Dispose of any resources that can be recreated.
     }
     

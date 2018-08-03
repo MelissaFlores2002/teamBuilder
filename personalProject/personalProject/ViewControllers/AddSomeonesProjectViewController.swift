@@ -43,8 +43,8 @@ class AddSomeonesProjectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cancelButton.layer.cornerRadius = 50
-        addRequestButton.layer.cornerRadius = 50
+        cancelButton.layer.cornerRadius = 10
+        addRequestButton.layer.cornerRadius = 10
 
         // Do any additional setup after loading the view.
     }

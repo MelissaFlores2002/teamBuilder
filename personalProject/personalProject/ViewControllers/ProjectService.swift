@@ -11,19 +11,12 @@ import FirebaseStorage
 import FirebaseDatabase
 
 
-struct PostService {
- 
+struct ProjectService {
 
-
-
-
-
-
-
-
-//
-//    let currentUser = User.current
-//    let post = Post()
+    let currentUser = User.current
+    
+    
+//    let project = Project()
 //
 //    let rootRef = Database.database().reference()
 //
@@ -58,8 +51,4 @@ struct PostService {
 //            }
 //        })
 //    }
-//
-//
-//
-//
 }

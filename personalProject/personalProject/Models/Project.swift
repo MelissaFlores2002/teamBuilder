@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import FirebaseDatabase.FIRDataSnapshot
+
 
 class Project {
     var key: String?
@@ -14,8 +16,26 @@ class Project {
     let location: String
     let description: String
     let why: String
+    let whoIsNeeded: String
     
-    init() {
-   
+    init(name: String, location: String, description: String, why: String, whoIsNeeded: String) {
+        self.name = name
+        self.location = location
+        self.description = description
+        self.why = why
+        self.whoIsNeeded = whoIsNeeded
+    }
+    
+    init(snapshot){
+        
+    }
+    
+    func toDictionary() -> [String : String] {
+     return ["name" : self.name,
+             "location" : self.location,
+             "description" : self.description,
+             "why" : self.why,
+             "whoIsNeeded" : self.whoIsNeeded]
+    
     }
 }
