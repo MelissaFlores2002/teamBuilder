@@ -25,11 +25,10 @@ class Project {
         self.why = why
         self.whoIsNeeded = whoIsNeeded
     }
-    
-    init(snapshot){
-        
-    }
-    
+//
+//    init(snapshot){
+//    }
+//
     func toDictionary() -> [String : String] {
      return ["name" : self.name,
              "location" : self.location,

@@ -17,7 +17,9 @@ struct ProjectService {
     
     static func create(for project: Project) {
        let addRef = Database.database().reference().child("project")
-    }
+        addRef.observeSingleEvent(of: .value, with: { (snapshot) in
+        }
+    )}
     
 //    let project = Project()
 //

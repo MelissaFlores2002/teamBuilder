@@ -95,11 +95,21 @@
 			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
+		0691A3C32113E52D00401DA7 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				0691A3AC2111306500401DA7 /* InputNumberTextField.swift */,
+				0691A3B2211227F200401DA7 /* CollectionViewCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		06BD64A72107AB170038F725 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				06BD64A82107AB320038F725 /* UserService.swift */,
 				0691A3BF21137F0A00401DA7 /* ProjectService.swift */,
+				06F972E82106886F005AE63B /* Helpers */,
 			);
 			name = Services;
 			path = "Models/New Group";
@@ -126,11 +136,11 @@
 		06F972D32106862C005AE63B /* personalProject */ = {
 			isa = PBXGroup;
 			children = (
-				06131E152108F0E8001408FA /* Extensions */,
 				06F972D42106862C005AE63B /* AppDelegate.swift */,
+				0691A3C32113E52D00401DA7 /* views */,
+				06131E152108F0E8001408FA /* Extensions */,
 				06F972E92106887D005AE63B /* Models */,
 				06BD64A72107AB170038F725 /* Services */,
-				06F972E82106886F005AE63B /* Helpers */,
 				06F972E72106884F005AE63B /* ViewControllers */,
 				06F972E621068841005AE63B /* StoryBoards */,
 				06F972DB2106862F005AE63B /* Assets.xcassets */,
@@ -167,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				0691A3AA2110E98F00401DA7 /* Constants.swift */,
-				0691A3AC2111306500401DA7 /* InputNumberTextField.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -177,7 +186,6 @@
 			children = (
 				06BD64A52107A7F50038F725 /* Users.swift */,
 				0691A3C121137F1500401DA7 /* Project.swift */,
-				0691A3B2211227F200401DA7 /* CollectionViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
