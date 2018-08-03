@@ -15,6 +15,9 @@ struct ProjectService {
 
     let currentUser = User.current
     
+    Project.UserUID.autoUID
+    
+    
     static func create(for project: Project) {
        let addRef = Database.database().reference().child("project")
         addRef.observeSingleEvent(of: .value, with: { (snapshot) in

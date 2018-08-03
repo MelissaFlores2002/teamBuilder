@@ -20,7 +20,42 @@ class ProfileViewController: UIViewController {
     
     }
     
+    let reuseIdentifier = "yourCell"
+    var items = [" "]
+    func collectionView(_ collectionViewYourProjects: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.items.count
+    }
+    func collectionView(_ collectionViewYourProjects: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionViewYourProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
+        //        cell.nameOfTheProject.text = self.items[indexPath.item]
+        //        cell.backgroundColor = UIColor.blue
+        return cell
+    }
+}
+
+func collectionView(_ collectionViewYourProjects: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
+    print("You selected cell #\(indexPath.item)!")
+}
+
+    
+    let reuseIdentifier1 = "addCell"
+    var items1 = [" "]
+    func collectionView1(_ collectionViewAddedProjects: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.items1.count
+    }
+    func collectionView1(_ collectionViewAddedProjects: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionViewAddedProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier1, for: indexPath as IndexPath) as! CollectionViewCell
+        //        cell.nameOfTheProject.text = self.items[indexPath.item]
+        //        cell.backgroundColor = UIColor.blue
+        return cell
+    }
+}
+func collectionView(_ collectionViewAddedProject: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    print("You selected cell #\(indexPath.item)!")
+}
+
     
     
     
@@ -53,4 +88,5 @@ class ProfileViewController: UIViewController {
     }
     */
 
+}
 }
