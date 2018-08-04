@@ -45,6 +45,8 @@ class AddSomeonesProjectViewController: UIViewController {
         super.viewDidLoad()
         cancelButton.layer.cornerRadius = 10
         addRequestButton.layer.cornerRadius = 10
+        
+        
 
         // Do any additional setup after loading the view.
     }

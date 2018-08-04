@@ -9,8 +9,8 @@
 import UIKit
 
 class NewProjectViewController: UIViewController {
-    
-    let user = try! JSONDecoder().decode(User.self, from: UserDefaults.standard.value(forKey: "currentUser") as! Data)
+
+   let user = try! JSONDecoder().decode(User.self, from: UserDefaults.standard.value(forKey: Constants.UserDefaults.currentUser) as! Data)
    
     @IBOutlet weak var newProjectTitle: UILabel!
     @IBOutlet weak var nameTitleLabel: UILabel!
@@ -32,7 +32,7 @@ class NewProjectViewController: UIViewController {
    
     
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
-        ProjectService.create(for: Project(name: inputNameTextField.text!, location: locationTextField.text!, description: inputProjectDescriptionTextField.text!, why: inputWhy.text!, whoIsNeeded: inputWhoYouNeedTextField.text!, creatorUID: user.username))
+        ProjectService.create(for: Project(name: inputNameTextField.text!, location: locationTextField.text!, description: inputProjectDescriptionTextField.text!, why: inputWhy.text!, whoIsNeeded: inputWhoYouNeedTextField.text!, creatorUID: user.uid))
         
         self.performSegue(withIdentifier: "BackToMain", sender: self)
     }

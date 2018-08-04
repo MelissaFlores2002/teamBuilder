@@ -27,6 +27,25 @@ class Project {
         self.whoIsNeeded = whoIsNeeded
         self.creatorUID = creatorUID
     }
+    init?(snapshot: DataSnapshot) {
+        guard let dict = snapshot.value as? [String: Any],
+            let name = dict["name"] as? String,
+            let location = dict["location"] as? String,
+        let description = dict["description"] as? String,
+        let why = dict["why"] as? String,
+        let whoIsNeeded = dict["whoIsNeeded"] as? String,
+        let creatorUID = dict["creatorUID"] as? String
+        else { return nil }
+        
+        self.key = snapshot.key
+        self.name = name
+        self.location = location
+        self.description = description
+        self.why = why
+        self.whoIsNeeded = whoIsNeeded
+        self.creatorUID = creatorUID
+    }
+    
 //
 //    init(snapshot){
 //    }
@@ -36,7 +55,8 @@ class Project {
              "location" : self.location,
              "description" : self.description,
              "why" : self.why,
-             "whoIsNeeded" : self.whoIsNeeded]
+             "whoIsNeeded" : self.whoIsNeeded,
+             "creatorUID": self.creatorUID]
     
     }
 

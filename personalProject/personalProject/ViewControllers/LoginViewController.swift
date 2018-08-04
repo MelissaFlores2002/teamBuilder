@@ -57,40 +57,62 @@ class LoginViewController: UIViewController {
 
 
 extension LoginViewController: FUIAuthDelegate {
-    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+//    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+//        if let error = error {
+//            assertionFailure("Error signing in \(error.localizedDescription)")
+//        }
+//
+//        guard let user =  authDataResult?.user
+//            else { return }
+//
+// let userRef = Database.database().reference().child("users").child(user.uid)
+//        UserService.show(forUID: user.uid) { (user) in
+//            if let user = user {
+//                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+//                UserDefaults.standard.synchronize()
+//                User.setCurrent(user, writeToUserDefaults: true)
+//                let initialViewController = UIStoryboard.initialViewController(for: .main)
+//                self.view.window?.rootViewController = initialViewController
+//                self.view.window?.makeKeyAndVisible()
+//            } else {
+////                self.performSegue(withIdentifier: "Main", sender: self)
+//            }
+//        }
+//        userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
+//            if let _ = User(snapshot: snapshot) {
+//                let storyboard = UIStoryboard(name: "Main", bundle: .main)
+//
+//                if let initialViewController = storyboard.instantiateInitialViewController() {
+//                    self.view.window?.rootViewController = initialViewController
+//                    self.view.window?.makeKeyAndVisible()
+//                }
+//            } else {
+//                self.performSegue(withIdentifier: Constants.Segue.toCreateUsername, sender: self)
+//            }
+//        })
+//    }
+    
+    func authUI(_ authUI: FUIAuth, didSignInWith user: FIRUser?, error: Error?) {
         if let error = error {
-            assertionFailure("Error signing in \(error.localizedDescription)")
+            assertionFailure("Error signing in: \(error.localizedDescription)")
+            return
         }
-
-        guard let user =  authDataResult?.user
+        
+        guard let user = user
             else { return }
-
- let userRef = Database.database().reference().child("users").child(user.uid)
+        
         UserService.show(forUID: user.uid) { (user) in
             if let user = user {
-                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-                UserDefaults.standard.synchronize()
-//                User.setCurrent(user, writeToUserDefaults: true)
+                // handle existing user
+                User.setCurrent(user, writeToUserDefaults: true)
+                
                 let initialViewController = UIStoryboard.initialViewController(for: .main)
                 self.view.window?.rootViewController = initialViewController
                 self.view.window?.makeKeyAndVisible()
             } else {
-//                self.performSegue(withIdentifier: "Main", sender: self)
-//            }
-//        }
-        userRef.observeSingleEvent(of: .value, with: { [unowned self] (snapshot) in
-            if let _ = User(snapshot: snapshot) {
-                let storyboard = UIStoryboard(name: "Main", bundle: .main)
-                
-                if let initialViewController = storyboard.instantiateInitialViewController() {
-                    self.view.window?.rootViewController = initialViewController
-                    self.view.window?.makeKeyAndVisible()
-                }
-            } else {
+                // handle new user
                 self.performSegue(withIdentifier: Constants.Segue.toCreateUsername, sender: self)
             }
-        })
+        }
     }
-}
-}
 }

@@ -15,8 +15,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
 
     
-    let reuseIdentifier = "cell"
-    var items = [" "]
+    let reuseIdentifier = "CollectionViewCell"
+    var items = [Project]() {
+        didSet{
+            collectionView.reloadData()
+        }
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.items.count
     }
@@ -34,7 +38,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   collectionView.register(UINib(nibName: "name", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
+        ProjectService.projects(completion: { (projects) in
+            self.items = projects
+        })
+//   collectionView.register(UINib(nibName: "name", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         
         // Do any additional setup after loading the view.
     }

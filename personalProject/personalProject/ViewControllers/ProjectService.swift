@@ -21,18 +21,32 @@ struct ProjectService {
     let currentUser = User.current
     
        static func create(for project: Project) {
-       let addRef = Database.database().reference().child("project")
+       let addRef = Database.database().reference().child("project").childByAutoId()
         addRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            addRef.child("\(currentUser)project\(projnum)").setValue(project.toDictionary())
-            projnum += 1
+            addRef.updateChildValues(project.toDictionary())
     }
     )}
-    static func show(){
-        let addRef = Database.database().reference().child("project")
-        addRef.observeSingleEvent(of: .value) { (snapshot) in
-            addRef.child("project: ")
-        }
+    
+    static func projects(completion: @escaping ([Project]) -> Void) {
+        let ref = Database.database().reference().child("project")
+
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+                return completion([])
+            }
+            
+            let proj = snapshot.reversed().compactMap(Project.init)
+            completion(proj)
+        })
     }
+    
+//    static func show(labelName: UILabel, labelLocation: UILabel, labelDescription: UILabel, labelWhy: UILabel, labelWhoIsNeeded: UILabel, labelCreatorUID: UILabel, labelUsername: UILabel, labelPhoneNumber: UILabel){
+//        let addRef = Database.database().reference().child("project")
+//        addRef.observeSingleEvent(of: .value) { (snapshot) in
+//        let retreive = addRef.value(forKey: "\(User.current)project\(projnum)")
+//       }
+//    }
+    
     
 //    let project = Project()
 //

@@ -16,7 +16,7 @@ class CreateUsernameViewController: UIViewController {
 
     @IBOutlet weak var usernameTextField: InputNumberTextField!
     @IBOutlet weak var nextButton: UIButton!
-
+    @IBOutlet weak var phoneNumber: InputNumberTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.layer.cornerRadius = 50
@@ -26,14 +26,24 @@ class CreateUsernameViewController: UIViewController {
                 self.usernameTextField.resignFirstResponder()
             }
         }
+        phoneNumber.doneButtonPressed = {
+            if self.phoneNumber.isFirstResponder {
+                self.phoneNumber.resignFirstResponder()
+            }
+        }
+        
     }
+    
 
 
 
     @IBAction func nextButtonPressed(_ sender: UIButton) {
         guard let firUser = Auth.auth().currentUser,
             let username = usernameTextField.text,
-            !username.isEmpty else { return }
+            !username.isEmpty,
+        let phonenumber = phoneNumber.text,
+        !phonenumber.isEmpty
+        else { return }
 //        let userAttrs = ["username": username]
 //        let ref = Database.database().reference().child("users").child(firUser.uid)
 //        ref.setValue(userAttrs) { (error, ref) in
@@ -45,10 +55,11 @@ class CreateUsernameViewController: UIViewController {
 //                let user = User(snapshot: snapshot)
 //            }
 //            )
-            UserService.create(firUser, username: username) { (user) in
+            UserService.create(firUser, username: username, phonenumber: phonenumber) { (user) in
                 guard let _ = user else {
                     return
                 }
+                
                 
             }
         
