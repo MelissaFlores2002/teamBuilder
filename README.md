@@ -50,6 +50,8 @@ This is for the creators, ranging from the hard core coders, to engineers, to ar
 - CoreData 
 - Table items
 - Coacoa Pods
+- UserService
+- ProjectService
 ​
 # Weekly Milestone
 ## Week 1 - Usable Build
@@ -106,17 +108,17 @@ Day 3 -
 
 Goal: Get the tab bar controller to come up at the bottom of the screen and properly function with shifting back and forth. Making the collection views only appear when a project has been created. 
 
-What got finished ~
+What got finished ~ I got the tab bar to appear when you run the app, and open on the correct view, with proper shifting of the views. I finished the Project Model, as well as got a create function to work.
 
 Day 4 - 
 
-Goal:
+Goal: Finish all backend for the create and show project
 
-What got finished ~
+What got finished ~ All the data stores in firebase and I have written a show function that I can call whereever I show the information.
 
 Day 5 - 
 
-Goal:
+Goal: Connect my backend show function to my frontend, and let it be seen by the world.
 
 What got finished ~
 
