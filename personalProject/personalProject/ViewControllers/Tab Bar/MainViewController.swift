@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import FirebaseDatabase
+
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
-
-    
 
     
     let reuseIdentifier = "CollectionViewCell"
@@ -28,6 +28,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
         //        cell.nameOfTheProject.text = self.items[indexPath.item]
+        
+        ProjectService.projects(for: Project.init(snapshot: self.DataSnapshot), completion: { (Project) in
+            self.items = Project as! [Project]
+        })
         //        cell.backgroundColor = UIColor.blue
         return cell
     }
@@ -38,19 +42,20 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        ProjectService.projects(for: Project.CollectionViewCell.show, completion: { (projects) in
-            self.items = projects
+
+        }
+
 //            ProjectService.projects(completion: collectionView.)
             
-                
-        })
+        
 //   collectionView.register(UINib(nibName: "name", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         
         // Do any additional setup after loading the view.
-    }
-
+    
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -67,4 +72,3 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     */
 
 }
-
