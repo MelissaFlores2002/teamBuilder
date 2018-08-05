@@ -111,6 +111,7 @@ extension LoginViewController: FUIAuthDelegate {
                 self.view.window?.makeKeyAndVisible()
             } else {
                 // handle new user
+//                User.create(user, newUserDefault: true)
                 self.performSegue(withIdentifier: Constants.Segue.toCreateUsername, sender: self)
             }
         }

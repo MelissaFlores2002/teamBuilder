@@ -12,6 +12,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+
     
 
     
@@ -38,8 +39,11 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ProjectService.projects(completion: { (projects) in
+        ProjectService.projects(for: Project.CollectionViewCell.show, completion: { (projects) in
             self.items = projects
+//            ProjectService.projects(completion: collectionView.)
+            
+                
         })
 //   collectionView.register(UINib(nibName: "name", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         

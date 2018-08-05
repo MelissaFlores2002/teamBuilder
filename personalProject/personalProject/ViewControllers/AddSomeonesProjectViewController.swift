@@ -34,7 +34,12 @@ class AddSomeonesProjectViewController: UIViewController {
 
     dismiss(animated: true, completion: nil)
 }
-
+    
+    @IBOutlet weak var contactButton: UIButton!
+    
+    @IBAction func contactButtonPressed(_ sender: UIButton) {
+    }
+    
     
     
     
@@ -43,8 +48,9 @@ class AddSomeonesProjectViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cancelButton.layer.cornerRadius = 10
-        addRequestButton.layer.cornerRadius = 10
+        cancelButton.layer.cornerRadius = 6
+        addRequestButton.layer.cornerRadius = 6
+        
         
         
 

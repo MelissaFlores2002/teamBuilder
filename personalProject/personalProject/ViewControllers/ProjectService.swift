@@ -27,14 +27,13 @@ struct ProjectService {
     }
     )}
     
-    static func projects(completion: @escaping ([Project]) -> Void) {
+    static func projects(for project: Project, completion: @escaping ([Project?]) -> Void) {
         let ref = Database.database().reference().child("project")
 
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
                 return completion([])
             }
-            
             let proj = snapshot.reversed().compactMap(Project.init)
             completion(proj)
         })

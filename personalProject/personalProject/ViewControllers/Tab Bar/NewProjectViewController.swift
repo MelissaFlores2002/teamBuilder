@@ -32,7 +32,7 @@ class NewProjectViewController: UIViewController {
    
     
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
-        ProjectService.create(for: Project(name: inputNameTextField.text!, location: locationTextField.text!, description: inputProjectDescriptionTextField.text!, why: inputWhy.text!, whoIsNeeded: inputWhoYouNeedTextField.text!, creatorUID: user.uid))
+        ProjectService.create(for: Project(name: inputNameTextField.text!, location: locationTextField.text!, description: inputProjectDescriptionTextField.text!, why: inputWhy.text!, whoIsNeeded: inputWhoYouNeedTextField.text!, creatorUsername: user.username))
         
         self.performSegue(withIdentifier: "BackToMain", sender: self)
     }
@@ -67,8 +67,8 @@ class NewProjectViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        cancelButton.layer.cornerRadius = 10
-        confirmButton.layer.cornerRadius = 10
+        cancelButton.layer.cornerRadius = 6
+        confirmButton.layer.cornerRadius = 6
 
         // Dispose of any resources that can be recreated.
     }

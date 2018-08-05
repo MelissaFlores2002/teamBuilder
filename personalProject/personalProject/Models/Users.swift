@@ -21,6 +21,13 @@ class User: Codable {
         return currentUser
     }
     
+//    static var new: User {
+//        guard let newUser = _newest else {
+//            fatalError("Error: current user does not exist")
+//        }
+//        return newUser
+//    }
+    
     init(uid: String, username: String) {
         self.uid = uid
         self.username = username
@@ -41,4 +48,12 @@ class User: Codable {
         }
         _current = user
     }
+    
+//    static func createDefault(_user: User, newUserDefaults: Bool = true) {
+//        if newUserDefaults {
+//            if let data = try? JSONEncoder().encode(<#T#>) {
+//                UserDefaults.standard.set(data, forKey: Constants.UserDefaults)
+//            }
+//        }
+//    }
 }
