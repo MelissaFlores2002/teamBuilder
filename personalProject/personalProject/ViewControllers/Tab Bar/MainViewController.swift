@@ -37,6 +37,10 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         let project = items[row]
         
         cell.titleOfProjectLabel.text = project.name
+        cell.locationLabel.text = project.location
+        cell.whoIsNeededLabel.text = project.whoIsNeeded
+        cell.whysLabel.text = project.why
+        
         
         return cell
     }

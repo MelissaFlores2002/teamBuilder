@@ -26,15 +26,20 @@ class ProfileViewController: UIViewController {
         return self.items.count
     }
     func collectionView(_ collectionViewYourProjects: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionViewYourProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
-        //        cell.nameOfTheProject.text = self.items[indexPath.item]
-        //        cell.backgroundColor = UIColor.blue
+        let cell = collectionViewYourProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath ) as! CollectionViewCell
+      
+        let row = indexPath.row
+        let project = items[row]
+        
         return cell
     }
 
 func collectionView(_ collectionViewYourProjects: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
     print("You selected cell #\(indexPath.item)!")
+    
+    
+    
 }
 
     

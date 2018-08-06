@@ -27,6 +27,11 @@ class AddSomeonesProjectViewController: UIViewController {
     dismiss(animated: true, completion: nil)
 }
 
+//    titleOfProjectLabel.text = project.name
+//    locationLabel.text = project.location
+//    whoIsNeededLabel.text = project.whoIsNeeded
+//    whysLabel.text = project.why
+//    
 
 @IBOutlet weak var addRequestButton: UIButton!
 
