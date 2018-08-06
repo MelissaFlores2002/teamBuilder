@@ -131,9 +131,9 @@ Cant wait to see what happens when it comes to the front end of the project.
 ## Week 4 - Polish
 Day 1 - 
 
-Goal:
+Goal: get the Add View Controller to show all the project details, correlating to the cell the user clicked on.
 
-What got finished ~
+What got finished ~ I go it to where when you click the button it gives you all the information on the project, just not the project you clicked on just yet. 
 
 Day 2 - 
 
