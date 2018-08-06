@@ -21,6 +21,12 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             collectionView.reloadData()
         }
     }
+    @objc func buttonPressed(_ sender: UIButton) {
+        let openedProj = items[sender.tag]
+        performSegue(withIdentifier: "moreInfo", sender: UIButton.self)
+        
+    }
+    
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -40,8 +46,24 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.locationLabel.text = project.location
         cell.whoIsNeededLabel.text = project.whoIsNeeded
         cell.whysLabel.text = project.why
-        
-        
+        cell.takeACloserLookButton.tag = indexPath.row
+        cell.takeACloserLookButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+//        func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            guard let identifier = segue.identifier else { return }
+//
+//            switch identifier {
+//            case "moreInfo":
+//                guard let indexPath = collectionView.indexPath else { return }
+//                let proj = Project[indexPath.row]
+//                let destination = segue.destination as! AddSomeonesProjectViewController
+//                destination.proj = proj
+//
+//            default:
+//                print("unexpected segue identifier")
+//            }
+//        }
+//
+//
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -54,7 +76,6 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         ProjectService.projects { (projectsFetched) in
             self.items = projectsFetched
         }
@@ -78,4 +99,5 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         // Pass the selected object to the new view controller.
     }
     */
+
 }

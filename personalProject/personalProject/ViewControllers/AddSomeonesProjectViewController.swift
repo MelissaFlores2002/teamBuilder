@@ -23,61 +23,43 @@ class AddSomeonesProjectViewController: UIViewController {
     @IBOutlet weak var locationAnsweredLabel: UILabel!
     @IBOutlet weak var cancelButton: UIButton!
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
-
     dismiss(animated: true, completion: nil)
-}
-
-//    titleOfProjectLabel.text = project.name
-//    locationLabel.text = project.location
-//    whoIsNeededLabel.text = project.whoIsNeeded
-//    whysLabel.text = project.why
-//    
-
+    }
+    @IBOutlet weak var creatorName: UILabel!
+    var items = [Project]()
 @IBOutlet weak var addRequestButton: UIButton!
-
 @IBAction func addRequestButtonPressed(_ sender: UIButton) {
 
     dismiss(animated: true, completion: nil)
 }
-    
+    var proj: Project?
     @IBOutlet weak var contactButton: UIButton!
-    
     @IBAction func contactButtonPressed(_ sender: UIButton) {
     }
-    
-    
-    
-    
-    
-    
-    
+    func showing(project: Project) {
+        self.projectNameLabel.text = project.name
+        self.locationAnsweredLabel.text = project.location
+        self.whoIsNeededAnsweredLabel.text = project.whoIsNeeded
+        self.whyExplanationLabel.text = project.why
+        self.projectDescrition.text = project.description
+        self.creatorName.text = project.creatorUsername
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         cancelButton.layer.cornerRadius = 6
         addRequestButton.layer.cornerRadius = 6
+        contactButton.layer.cornerRadius = 6
         
-        
-        
-
+//        self.showing(project: items[])
+//        ProjectService.projects { (projectsFetched) in
+//            self.items = self.showing(project: Project)
         // Do any additional setup after loading the view.
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
 
     /*
     // MARK: - Navigation
@@ -89,4 +71,4 @@ class AddSomeonesProjectViewController: UIViewController {
     }
     */
 
-}
+

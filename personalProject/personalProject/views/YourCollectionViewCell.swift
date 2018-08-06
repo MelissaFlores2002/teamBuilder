@@ -9,5 +9,12 @@
 import UIKit
 
 class YourCollectionViewCell: UICollectionViewCell {
+
+    @IBOutlet weak var nameOfYourProjectLabel: UILabel!
+    @IBOutlet weak var takeACloserLookButton: UIButton!
+    @IBAction func takeACloserLookButtonPressed(_ sender: UIButton) {
+
+    
+    }
     
 }

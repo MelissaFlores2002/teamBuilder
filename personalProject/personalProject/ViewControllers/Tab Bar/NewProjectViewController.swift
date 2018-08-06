@@ -25,62 +25,56 @@ class NewProjectViewController: UIViewController {
     @IBOutlet weak var inputWhy: InputNumberTextField!
     @IBOutlet weak var cancelButton: UIButton!
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
-    
-        
+        self.tabBarController!.selectedIndex = 1
     }
     @IBOutlet weak var confirmButton: UIButton!
-   
-    
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
         ProjectService.create(for: Project(name: inputNameTextField.text!, location: locationTextField.text!, description: inputProjectDescriptionTextField.text!, why: inputWhy.text!, whoIsNeeded: inputWhoYouNeedTextField.text!, creatorUsername: user.username)) {
             success in
             if success == true {
                 self.tabBarController!.selectedIndex = 1
-                
+                self.inputNameTextField.text = " "
+                self.locationTextField.text = " "
+                self.inputProjectDescriptionTextField.text = " "
+                self.inputWhoYouNeedTextField.text = " "
+                self.inputWhy.text = " "
             } else{
                 assertionFailure("somethint went wrong in the ProjectService.create funciton")
             }
         }
 //        self.performSegue(withIdentifier: "BackToMain", sender: self)
     }
-    
-    
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        inputWhoYouNeedTextField.doneButtonPressed = {
+            if self.inputWhoYouNeedTextField.isFirstResponder {
+                self.inputWhoYouNeedTextField.resignFirstResponder()
+            }
+        }
+        inputWhy.doneButtonPressed = {
+            if self.inputWhy.isFirstResponder {
+                self.inputWhy.resignFirstResponder()
+            }
+        }
+        inputProjectDescriptionTextField.doneButtonPressed = {
+            if self.inputProjectDescriptionTextField.isFirstResponder {
+                self.inputProjectDescriptionTextField.resignFirstResponder()
+            }
+        }
+        
+        
+        
         cancelButton.layer.cornerRadius = 6
         confirmButton.layer.cornerRadius = 6
-
-        // Dispose of any resources that can be recreated.
+        inputNameTextField.text = " "
+        locationTextField.text = " "
+       
+        inputProjectDescriptionTextField.text = " "
+        inputWhoYouNeedTextField.text = " "
+        inputWhy.text = " "
+        // Do any additional setup after loading the view.
     }
-    
-
     /*
     // MARK: - Navigation
 

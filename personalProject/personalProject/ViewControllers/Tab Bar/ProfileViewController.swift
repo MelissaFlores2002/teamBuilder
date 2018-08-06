@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
    
     @IBOutlet weak var profileTitleLabel: UILabel!
     @IBOutlet weak var yourProjectsAndRequestsOnThemLabel: UILabel!
@@ -26,21 +26,25 @@ class ProfileViewController: UIViewController {
         return self.items.count
     }
     func collectionView(_ collectionViewYourProjects: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionViewYourProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath ) as! CollectionViewCell
+        let cell = collectionViewYourProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath ) as! YourCollectionViewCell
       
         let row = indexPath.row
         let project = items[row]
+//        cell.nameOfYourProjectLabel.text = project
+//        cell.nameOfYourProjectLabel.text = project.name
+        
         
         return cell
     }
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            print("You selected cell #\(indexPath.item)!")
+        }
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            logoutButton.layer.cornerRadius = 6
+        }
+        
 
-func collectionView(_ collectionViewYourProjects: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
-    print("You selected cell #\(indexPath.item)!")
-    
-    
-    
-}
 
     
 //    let reuseIdentifier1 = "addCell"
@@ -61,15 +65,15 @@ func collectionView(_ collectionViewYourProjects: UICollectionView, didSelectIte
 //}
 
     
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+//
+//
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
 
         
         // Do any additional setup after loading the view.
-    }
+    
 
   
     

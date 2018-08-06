@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CollectionViewCellDelegate: class {
+    func buttonPressed(_ sender: CollectionViewCellDelegate)
+}
+
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var titleOfProjectLabel: UILabel!
@@ -18,9 +22,12 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var takeACloserLookButton: UIButton!
     @IBAction func takeACloserLookButtonPressed(_ sender: UIButton) {
     }
+    var onButtonTapped: ((CollectionViewCell) -> Void)? = nil
     
+    weak var delegate: CollectionViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
+        takeACloserLookButton.layer.cornerRadius = 6
 //        ProjectService.projects(for: Project.init(name: titleOfProjectLabel.text!, location: locationLabel.text!, description: " ", why: whysLabel.text!, whoIsNeeded: whoIsNeededLabel.text!, creatorUsername: " ")) { (Project) in
 //    }
         }
