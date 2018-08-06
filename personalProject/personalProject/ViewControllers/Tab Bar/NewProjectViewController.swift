@@ -62,14 +62,21 @@ class NewProjectViewController: UIViewController {
                 self.inputProjectDescriptionTextField.resignFirstResponder()
             }
         }
-        
-        
+        locationTextField.doneButtonPressed = {
+            if self.locationTextField.isFirstResponder {
+                self.locationTextField.resignFirstResponder()
+            }
+        }
+        inputNameTextField.doneButtonPressed = {
+            if self.inputNameTextField.isFirstResponder {
+                self.inputNameTextField.resignFirstResponder()
+            }
+        }
         
         cancelButton.layer.cornerRadius = 6
         confirmButton.layer.cornerRadius = 6
         inputNameTextField.text = " "
         locationTextField.text = " "
-       
         inputProjectDescriptionTextField.text = " "
         inputWhoYouNeedTextField.text = " "
         inputWhy.text = " "
