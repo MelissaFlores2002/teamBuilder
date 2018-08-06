@@ -120,9 +120,13 @@ Day 5 -
 
 Goal: Connect my backend show function to my frontend, and let it be seen by the world.
 
-What got finished ~
+What got finished ~ Got cells to populate the area, got the information to appear in the font end. Ran into 3 major bugs, 3 of them are now fixed and the user can signup without the app crashing.
 
-Feedback on ... 
+Feedback on App Design
+Buttons were to big, the spacing was very bad.
+The colors were nice.
+Cant wait to see what happens when it comes to the front end of the project.
+
 ​
 ## Week 4 - Polish
 Day 1 - 
