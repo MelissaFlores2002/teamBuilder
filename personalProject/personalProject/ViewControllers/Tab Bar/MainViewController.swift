@@ -21,12 +21,23 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             collectionView.reloadData()
         }
     }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.items.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
 
+        let row = indexPath.row
+        let project = items[row]
+        
+        cell.titleOfProjectLabel.text = project.name
+        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -34,14 +45,23 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.items.count
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        ProjectService.projects { (projectsFetched) in
+            self.items = projectsFetched
         }
+    }
 //            ProjectService.projects(completion: collectionView.)
 //   collectionView.register(UINib(nibName: "name", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         // Do any additional setup after loading the view.
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
         // Dispose of any resources that can be recreated.
     }
     

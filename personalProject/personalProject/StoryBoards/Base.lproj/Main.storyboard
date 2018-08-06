@@ -481,7 +481,6 @@
                                 </state>
                                 <connections>
                                     <action selector="confirmButtonPressed:" destination="nKG-Tu-imb" eventType="touchUpInside" id="Q2v-pV-xdm"/>
-                                    <segue destination="asC-uo-cmy" kind="show" identifier="BackToMain" id="7gh-jd-ZeO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Project" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXz-aW-p3p">
@@ -703,7 +702,6 @@
                                         <connections>
                                             <outlet property="locationLabel" destination="DKe-xD-lHc" id="xTI-uk-6oZ"/>
                                             <outlet property="takeACloserLookButton" destination="gfp-l5-GQt" id="2br-ZU-Rh3"/>
-                                            <outlet property="takeACloserLookButtonPressed" destination="gfp-l5-GQt" id="Dr8-te-gpe"/>
                                             <outlet property="titleOfProjectLabel" destination="oY8-tm-wLi" id="vbi-kO-loo"/>
                                             <outlet property="whoIsNeededLabel" destination="rfl-NK-vYL" id="Qzs-yo-b1C"/>
                                             <outlet property="whyLabel" destination="xeS-9v-3fb" id="ks8-7h-qjF"/>

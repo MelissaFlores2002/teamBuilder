@@ -34,7 +34,7 @@ class Project {
         let description = dict["description"] as? String,
         let why = dict["why"] as? String,
         let whoIsNeeded = dict["whoIsNeeded"] as? String,
-        let creatorUsername = dict["creatorUsername"] as? String
+        let creatorUsername = dict["creatorUID"] as? String
         else { return nil }
         
         self.key = snapshot.key

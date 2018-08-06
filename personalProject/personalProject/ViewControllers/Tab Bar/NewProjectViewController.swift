@@ -10,7 +10,7 @@ import UIKit
 
 class NewProjectViewController: UIViewController {
 
-   let user = try! JSONDecoder().decode(User.self, from: UserDefaults.standard.value(forKey: Constants.UserDefaults.currentUser) as! Data)
+    let user = User.current// try! JSONDecoder().decode(User.self, from: (UserDefaults.standard.value(forKey: Constants.UserDefaults.currentUser) as! Data))
    
     @IBOutlet weak var newProjectTitle: UILabel!
     @IBOutlet weak var nameTitleLabel: UILabel!
@@ -32,9 +32,16 @@ class NewProjectViewController: UIViewController {
    
     
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
-        ProjectService.create(for: Project(name: inputNameTextField.text!, location: locationTextField.text!, description: inputProjectDescriptionTextField.text!, why: inputWhy.text!, whoIsNeeded: inputWhoYouNeedTextField.text!, creatorUsername: user.username))
-        
-        self.performSegue(withIdentifier: "BackToMain", sender: self)
+        ProjectService.create(for: Project(name: inputNameTextField.text!, location: locationTextField.text!, description: inputProjectDescriptionTextField.text!, why: inputWhy.text!, whoIsNeeded: inputWhoYouNeedTextField.text!, creatorUsername: user.username)) {
+            success in
+            if success == true {
+                self.tabBarController!.selectedIndex = 1
+                
+            } else{
+                assertionFailure("somethint went wrong in the ProjectService.create funciton")
+            }
+        }
+//        self.performSegue(withIdentifier: "BackToMain", sender: self)
     }
     
     

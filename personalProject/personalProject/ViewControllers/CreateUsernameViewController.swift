@@ -56,11 +56,13 @@ class CreateUsernameViewController: UIViewController {
 //            }
 //            )
             UserService.create(firUser, username: username, phonenumber: phonenumber) { (user) in
-                guard let _ = user else {
+                guard let user = user else {
                     return
                 }
                 
+                User.setCurrent(user, writeToUserDefaults: true)
                 
+                self.performSegue(withIdentifier: "Main", sender: self)
             }
         
 //        let storyboard = UIStoryboard(name: "Main", bundle: .main)
@@ -68,7 +70,6 @@ class CreateUsernameViewController: UIViewController {
 //       self.view.window?.rootViewController = initialViewController
 //        self.view.window?.makeKeyAndVisible()
 //         }
-        self.performSegue(withIdentifier: "Main", sender: self)
     
     
         

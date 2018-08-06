@@ -21,8 +21,8 @@ class CollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        ProjectService.projects(for: Project.init(name: titleOfProjectLabel.text!, location: locationLabel.text!, description: " ", why: whysLabel.text!, whoIsNeeded: whoIsNeededLabel.text!, creatorUsername: " ")) { (Project) in
-    }
+//        ProjectService.projects(for: Project.init(name: titleOfProjectLabel.text!, location: locationLabel.text!, description: " ", why: whysLabel.text!, whoIsNeeded: whoIsNeededLabel.text!, creatorUsername: " ")) { (Project) in
+//    }
         }
     }
         
