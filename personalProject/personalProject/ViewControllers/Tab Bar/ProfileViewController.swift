@@ -9,11 +9,16 @@
 import UIKit
 
 class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
    
+    @IBAction func yourProjectsAndAddedTeams(_ sender: UISegmentedControl) {
+   
+    }
+    @IBOutlet weak var chooseBetweenYourAndAdded: UISegmentedControl!
     @IBOutlet weak var profileTitleLabel: UILabel!
-    @IBOutlet weak var yourProjectsAndRequestsOnThemLabel: UILabel!
-    @IBOutlet weak var addedProjectsAndRequestedLabel: UILabel!
-    @IBOutlet weak var collectionViewYourProjects: UICollectionView!
     @IBOutlet weak var collectionViewAddedProjects: UICollectionView!
     @IBOutlet weak var logoutButton: UIButton!
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
@@ -29,27 +34,41 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     let reuseIdentifier = "yourCell"
     var items = [Project]()
+    var yourItems = [Project]()
     func collectionView(_ collectionViewYourProjects: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.items.count
     }
-    func collectionView(_ collectionViewYourProjects: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionViewYourProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath ) as! YourCollectionViewCell
-      
-        let row = indexPath.row
-        let projects = items[row]
+//    func collectionView(_ collectionViewYourProjects: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionViewYourProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath ) as! YourCollectionViewCell
+//
+//        let row = indexPath.row
+//        let projects = items[row]
+//
+//        cell.nameOfYourProjectLabel.text = projects.name
+//        cell.takeACloserLookButton.tag = indexPath.row
+//        cell.takeACloserLookButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+////        cell.nameOfYourProjectLabel.text = project
+////        cell.nameOfYourProjectLabel.text = project.name
+//        return cell
+//    }
     
-        cell.nameOfYourProjectLabel.text = projects.name
-        cell.takeACloserLookButton.tag = indexPath.row
-        cell.takeACloserLookButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
-//        cell.nameOfYourProjectLabel.text = project
-//        cell.nameOfYourProjectLabel.text = project.name
-        return cell
-    }
+    // TODO: swift case in "numberOfSections" and "cellForItem" based on the segmented controller
+    
     func numberOfSections(in collectionViewAddedProjects: UICollectionView) -> Int {
+       
+        switch chooseBetweenYourAndAdded {
+
+        case :
+            <#code#>
+        default:
+            <#code#>
+        }
+        
+        
         return 1
     }
     func addedCollectionView(_ collectionViewAddedProjects: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionViewYourProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath ) as! AddedCollectionViewCell
+        let cell = collectionViewAddedProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath ) as! AddedCollectionViewCell
     
         let row = indexPath.row
         let project = items[row]

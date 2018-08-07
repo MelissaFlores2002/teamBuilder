@@ -21,6 +21,7 @@ struct UserService {
         })
     }
     
+    
     static func create(_ firUser: FIRUser, username: String, phonenumber: String, completion: @escaping (User?) -> Void) {
         let userAttrs = ["username": username, "phonenumber": phonenumber]
         
@@ -36,6 +37,12 @@ struct UserService {
                 completion(user)
             })
         }
+        
+        
+    }
+    
+    static func addOrCreateProj(_ currentUID: String, yourProj: Bool, projectUID: String)  {
+        
     }
     
 //    static func posts(for user: User, completion: @escaping ([Post]) -> Void) {

@@ -36,6 +36,33 @@ class AddSomeonesProjectViewController: UIViewController {
     @IBOutlet weak var contactButton: UIButton!
     @IBAction func contactButtonPressed(_ sender: UIButton) {
     }
+    
+    @IBOutlet weak var flagingButton: UIButton!
+    
+    @IBAction func flaggingButtonPressed(_ sender: UIButton) {
+    
+        //        guard let indexPath = self.indexPath(for: AddSomeonesProjectViewController) else { return }
+        //        let projs = Project[indexPath.section]
+        //        let proj = projs.projects
+        //
+        //        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        //
+        //        if proj.uid != User.current.uid {
+        //            let flagAction = UIAlertAction(title: "Report as Inappropriate", style: .default) { _ in
+        //                print("report post")
+        //            }
+        //
+        //            alertController.addAction(flagAction)
+        //        }
+        //
+        //        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        //        alertController.addAction(cancelAction)
+        //
+        //        present(alertController, animated: true, completion: nil)
+        //    }
+    }
+    
+    
     func showing(project: Project) {
         self.projectNameLabel.text = project.name
         self.locationAnsweredLabel.text = project.location
@@ -70,27 +97,7 @@ class AddSomeonesProjectViewController: UIViewController {
     func handleOptionsButtonTap(from button: UIButton) {
     }
 }
-//        guard let indexPath = self.indexPath(for: AddSomeonesProjectViewController) else { return }
-//        let projs = Project[indexPath.section]
-//        let proj = projs.projects
-//
-//        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-//
-//        if proj.uid != User.current.uid {
-//            let flagAction = UIAlertAction(title: "Report as Inappropriate", style: .default) { _ in
-//                print("report post")
-//            }
-//
-//            alertController.addAction(flagAction)
-//        }
-//
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-//        alertController.addAction(cancelAction)
-//
-//        present(alertController, animated: true, completion: nil)
-//    }
-//}
-    /*
+/*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

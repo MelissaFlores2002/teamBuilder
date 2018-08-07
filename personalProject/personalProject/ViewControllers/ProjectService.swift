@@ -23,9 +23,12 @@ struct ProjectService {
     static func create(for project: Project, completion: @escaping (Bool) -> Void) {
         let addRef = Database.database().reference().child("project").childByAutoId()
         addRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            addRef.updateChildValues(project.toDictionary()) { error, ref in
+            addRef.updateChildValues(project.toDictionary())
+                
+            { error, ref in
                 if error == nil {
                     completion(true)
+                    
                 } else {
                     completion(false)
                 }
