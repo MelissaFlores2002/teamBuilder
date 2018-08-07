@@ -42,6 +42,8 @@ struct UserService {
     }
     
     static func addOrCreateProj(_ currentUID: String, yourProj: Bool, projectUID: String)  {
+        let teamsDict = ["yourProj": yourProj, "projectUID": projectUID, "currentUID": currentUID] as [String : Any]
+        
         
     }
     
