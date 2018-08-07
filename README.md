@@ -137,9 +137,9 @@ What got finished ~ I go it to where when you click the button it gives you all 
 
 Day 2 - 
 
-Goal:
+Goal: Have my app be ready to launch by the end of the day. Finish the profile page.
 
-What got finished ~
+What got finished ~ 
 
 Day 3 - 
 
