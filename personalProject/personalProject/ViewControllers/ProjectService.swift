@@ -45,7 +45,25 @@ struct ProjectService {
             completion(proj)
         })
     }
-    
+    static func flag(_ project: Project) {
+        guard let projectKey = project.key else { return }
+        let flaggedPostRef = Database.database().reference().child("flaggedPosts").child(projectKey)
+
+        let flaggedDict = ["name" : project.name,
+                           "location" : project.location,
+                           "description" : project.description,
+                           "why" : project.why,
+                           "whoIsNeeded" : project.whoIsNeeded,
+                           "creatorUID": project.creatorUsername,
+                           "reporter_uid": User.current.uid]
+        flaggedPostRef.updateChildValues(flaggedDict)
+        let flagCountRef = flaggedPostRef.child("flag_count")
+        flagCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+            let currentCount = mutableData.value as? Int ?? 0
+            mutableData.value = currentCount + 1
+            return TransactionResult.success(withValue: mutableData)
+        })
+    }
     //    static func show(labelName: UILabel, labelLocation: UILabel, labelDescription: UILabel, labelWhy: UILabel, labelWhoIsNeeded: UILabel, labelCreatorUID: UILabel, labelUsername: UILabel, labelPhoneNumber: UILabel){
     //        let addRef = Database.database().reference().child("project")
     //        addRef.observeSingleEvent(of: .value) { (snapshot) in

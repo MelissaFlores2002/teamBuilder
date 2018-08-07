@@ -66,8 +66,30 @@ class AddSomeonesProjectViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func handleOptionsButtonTap(from button: UIButton) {
+    }
 }
-
+//        guard let indexPath = self.indexPath(for: AddSomeonesProjectViewController) else { return }
+//        let projs = Project[indexPath.section]
+//        let proj = projs.projects
+//
+//        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+//
+//        if proj.uid != User.current.uid {
+//            let flagAction = UIAlertAction(title: "Report as Inappropriate", style: .default) { _ in
+//                print("report post")
+//            }
+//
+//            alertController.addAction(flagAction)
+//        }
+//
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//        alertController.addAction(cancelAction)
+//
+//        present(alertController, animated: true, completion: nil)
+//    }
+//}
     /*
     // MARK: - Navigation
 
@@ -77,5 +99,3 @@ class AddSomeonesProjectViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
-

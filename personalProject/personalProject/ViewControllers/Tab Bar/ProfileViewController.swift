@@ -28,7 +28,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         performSegue(withIdentifier: "moreInfo", sender: self)
     }
     let reuseIdentifier = "yourCell"
-    var items = [" "]
+    var items = [Project]()
     func collectionView(_ collectionViewYourProjects: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.items.count
     }
@@ -36,9 +36,9 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         let cell = collectionViewYourProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath ) as! YourCollectionViewCell
       
         let row = indexPath.row
-        let project = items[row]
+        let projects = items[row]
     
-        cell.nameOfYourProjectLabel.text = project.name
+        cell.nameOfYourProjectLabel.text = projects.name
         cell.takeACloserLookButton.tag = indexPath.row
         cell.takeACloserLookButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
 //        cell.nameOfYourProjectLabel.text = project
