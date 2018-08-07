@@ -14,5 +14,13 @@ class AddedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var takeACloserLookButton: UIButton!
     @IBAction func takeACloserLookButtonPressed(_ sender: UIButton) {
     }
+   
+        var onButtonTapped: ((AddedCollectionViewCell) -> Void)? = nil
+        
+        weak var delegate: CollectionViewCellDelegate?
+        override func awakeFromNib() {
+            super.awakeFromNib()
+            takeACloserLookButton.layer.cornerRadius = 6
+        }
     
 }

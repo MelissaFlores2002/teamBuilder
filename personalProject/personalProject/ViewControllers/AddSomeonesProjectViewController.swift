@@ -55,6 +55,13 @@ class AddSomeonesProjectViewController: UIViewController {
 //            self.items = self.showing(project: Project)
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let project = proj else { return }
+        self.showing(project: project)
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
