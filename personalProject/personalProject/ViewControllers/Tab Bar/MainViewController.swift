@@ -16,6 +16,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var collectionView: UICollectionView!
     
     var newIndexPath: Int!
+  
+    let user = try! JSONDecoder().decode(User.self, from: UserDefaults.standard.value(forKey: "currentUser") as! Data)
     
     let reuseIdentifier = "CollectionViewCell"
     var items = [Project]() {
@@ -101,9 +103,25 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         let proj = items[indexPath]
         let destination = segue.destination as! AddSomeonesProjectViewController
         destination.proj = proj
-            print(destination.proj)
+            
+        case "profileSegue":
+            guard let indexPath = newIndexPath else { return }
+            let proj = items[indexPath]
+            let destination = segue.destination as! ProfileViewController
+            if proj.creatorUsername == user.username {
+                Database.database().reference().child("users").child(user.uid).child("projects").setValue(proj) { (error, ref) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                    }
+                    Database.database().reference().child("users").child(self.user.uid).child("projects").setValue(Any?.self)
+                    destination.yourItems.append(proj)
+                }
+            } else {
+                destination.addItems.append(proj)
+            }
+            
         default :
             print("unexpected segue identifier")
-    }
+        }
 }
 }

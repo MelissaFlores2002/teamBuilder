@@ -20,9 +20,19 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
    
     @IBAction func yourProjectsAndAddedTeams(_ sender: UISegmentedControl) {
         let ref = Database.database().reference().child("users").child(user.uid).child("projects")
-        let ref2 = Database.database().reference().child("project").child(project.uid).child("projects")
+        let ref2 = Database.database().reference().child("project")
         ref.child("yourProjects").observeSingleEvent(of: .value) { (snap) in
             let value = snap.value as! [String: Any]
+            let projIDs = value["uid"] as! [String]
+            
+            for projID in projIDs {
+                ref2.child(projID).observeSingleEvent(of: .value, with: { (snap) in
+                    let value = snap.value as! [String: Any]
+                    self.yourItems.append(Project(name: value["name"] as! String, location: value["location"] as! String, description: value["description"] as! String, why: value["why"] as! String, whoIsNeeded: value["whoIsNeeded"] as! String, creatorUsername: value["creatorUID"] as! String))
+                })
+            }
+
+            
             
         }
     }
@@ -46,7 +56,6 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     var addItems = [Project]()
     
     var yourItems = [Project]()
-
     
     
     @objc func buttonPressed(_ sender: UIButton) {
@@ -109,6 +118,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         logoutButton.layer.cornerRadius = 6
+        collectionViewAddedProjects.delegate = self
+        collectionViewAddedProjects.dataSource = self
         }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
@@ -119,7 +130,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
             let proj = currentItems[indexPath]
             let destination = segue.destination as! AddSomeonesProjectViewController
             destination.proj = proj
-            print(destination.proj!)
+            
         default :
             print("unexpected segue identifier")
         }

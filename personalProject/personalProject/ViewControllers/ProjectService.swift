@@ -57,8 +57,7 @@ struct ProjectService {
                            "why" : project.why,
                            "whoIsNeeded" : project.whoIsNeeded,
                            "creatorUID": project.creatorUsername,
-                           "reporter_uid": User.current.uid,
-                           "projectUID": project.uid]
+                           "reporter_uid": User.current.uid]
         flaggedPostRef.updateChildValues(flaggedDict)
         let flagCountRef = flaggedPostRef.child("flag_count")
         flagCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in
