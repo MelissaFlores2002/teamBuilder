@@ -24,7 +24,6 @@ struct ProjectService {
         let addRef = Database.database().reference().child("project").childByAutoId()
         addRef.observeSingleEvent(of: .value, with: { (snapshot) in
             addRef.updateChildValues(project.toDictionary())
-                
             { error, ref in
                 if error == nil {
                     completion(true)
@@ -58,7 +57,8 @@ struct ProjectService {
                            "why" : project.why,
                            "whoIsNeeded" : project.whoIsNeeded,
                            "creatorUID": project.creatorUsername,
-                           "reporter_uid": User.current.uid]
+                           "reporter_uid": User.current.uid,
+                           "projectUID": project.uid]
         flaggedPostRef.updateChildValues(flaggedDict)
         let flagCountRef = flaggedPostRef.child("flag_count")
         flagCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in

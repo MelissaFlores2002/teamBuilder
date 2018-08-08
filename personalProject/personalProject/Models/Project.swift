@@ -19,6 +19,7 @@ class Project {
     let whoIsNeeded: String
     let creatorUsername: String
     
+    
     init(name: String, location: String, description: String, why: String, whoIsNeeded: String, creatorUsername: String) {
         self.name = name
         self.location = location

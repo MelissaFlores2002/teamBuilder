@@ -22,6 +22,7 @@ class User: Codable {
         return currentUser
     }
     
+    
 //    static var new: User {
 //        guard let newUser = _newest else {
 //            fatalError("Error: current user does not exist")

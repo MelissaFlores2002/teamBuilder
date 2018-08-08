@@ -20,7 +20,6 @@
 		0691A3BD21136E7700401DA7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3BC21136E7700401DA7 /* TabBarViewController.swift */; };
 		0691A3C021137F0A00401DA7 /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3BF21137F0A00401DA7 /* ProjectService.swift */; };
 		0691A3C221137F1600401DA7 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3C121137F1500401DA7 /* Project.swift */; };
-		0691A3C52113EC0300401DA7 /* YourCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3C42113EC0300401DA7 /* YourCollectionViewCell.swift */; };
 		0691A3C72113EC2100401DA7 /* AddedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0691A3C62113EC2100401DA7 /* AddedCollectionViewCell.swift */; };
 		06BD649A2106B6EB0038F725 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06BD64992106B6EB0038F725 /* Login.storyboard */; };
 		06BD649C2106B71E0038F725 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD649B2106B71E0038F725 /* LoginViewController.swift */; };
@@ -49,7 +48,6 @@
 		0691A3BC21136E7700401DA7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		0691A3BF21137F0A00401DA7 /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProjectService.swift; path = personalProject/ViewControllers/ProjectService.swift; sourceTree = SOURCE_ROOT; };
 		0691A3C121137F1500401DA7 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
-		0691A3C42113EC0300401DA7 /* YourCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCollectionViewCell.swift; sourceTree = "<group>"; };
 		0691A3C62113EC2100401DA7 /* AddedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedCollectionViewCell.swift; sourceTree = "<group>"; };
 		06BD64992106B6EB0038F725 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Login.storyboard; path = ../../../../Users/melissa126/Desktop/teamBuilder/personalProject/personalProject/StoryBoards/Login.storyboard; sourceTree = DEVELOPER_DIR; };
 		06BD649B2106B71E0038F725 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				0691A3AC2111306500401DA7 /* InputNumberTextField.swift */,
-				0691A3C42113EC0300401DA7 /* YourCollectionViewCell.swift */,
 				0691A3B2211227F200401DA7 /* CollectionViewCell.swift */,
 				0691A3C62113EC2100401DA7 /* AddedCollectionViewCell.swift */,
 			);
@@ -359,7 +356,6 @@
 				06131E1B2109144D001408FA /* YourProfileViewController.swift in Sources */,
 				06BD64A92107AB320038F725 /* UserService.swift in Sources */,
 				06BD64AB2107AC370038F725 /* CreateUsernameViewController.swift in Sources */,
-				0691A3C52113EC0300401DA7 /* YourCollectionViewCell.swift in Sources */,
 				0691A3AB2110E98F00401DA7 /* Constants.swift in Sources */,
 				0691A3AD2111306500401DA7 /* InputNumberTextField.swift in Sources */,
 				0691A3C021137F0A00401DA7 /* ProjectService.swift in Sources */,
