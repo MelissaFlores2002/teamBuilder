@@ -62,9 +62,6 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
                     let value = snap.value as! [String: String]
                     let project = Project(name: value["name"]!, location: value["location"]!, description: value["description"]!, why: value["why"]!, whoIsNeeded: value["whoIsNeeded"]!, creatorUsername: value["creatorUID"]!, phoneNumber: value["phoneNumber"]!)
                     self.yourItems.append(project)
-                    var projectsRef = Database.database().reference().child("projectUIDS")
-                    let snap = DataSnapshot()
-
                 })
             }
             self.yourItems = self.yourItems.filter {
@@ -98,9 +95,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         logoutButton.layer.cornerRadius = 6
         collectionViewAddedProjects.delegate = self
         collectionViewAddedProjects.dataSource = self
-        ProjectService.projects { (value) in
-            self.yourItems = value
-  }
+     
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }

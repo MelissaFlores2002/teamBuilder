@@ -9,7 +9,8 @@
 import UIKit
 
 class AddSomeonesProjectViewController: UIViewController {
-    
+    var newIndexPath: Int!
+
     @IBOutlet weak var addTitle: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var projectNameLabel: UILabel!
@@ -30,6 +31,8 @@ class AddSomeonesProjectViewController: UIViewController {
     var proj: Project?
     @IBOutlet weak var contactButton: UIButton!
     @IBAction func contactButtonPressed(_ sender: UIButton) {
+        newIndexPath = sender.tag
+        performSegue(withIdentifier: "contactCreatorSegue", sender: self)
     }
     
     @IBOutlet weak var flagingButton: UIButton!
@@ -90,7 +93,21 @@ class AddSomeonesProjectViewController: UIViewController {
     
     func handleOptionsButtonTap(from button: UIButton) {
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case "contactCreatorSegue":
+            guard let indexPath = newIndexPath else { return }
+                let destination = segue.destination as! ContactCreatorViewController
+                destination.proj = proj
+        default :
+            print("unexpected segue identifier")
+        }
+    }
 }
+
+
 /*
  // MARK: - Navigation
  

@@ -25,11 +25,11 @@ struct ProjectService {
         let addRef = Database.database().reference().child("project").childByAutoId()
         addRef.observeSingleEvent(of: .value, with: { (snapshot) in
             let projectUID = snapshot.key
-            let userRef = Database.database().reference().child("users").child("\(User.current.uid)")
+            let userRef = Database.database().reference().child("users").child(User.current.uid)
             let newDict: [String: Any] = ["phoneNumber": User.current.phoneNumber, "username": User.current.username, "projectUIDs": [projectUID]]
             userRef.setValue(newDict, withCompletionBlock: { (error, ref) in
                 if let error = error {
-                    assertionFailure(error.localizedDescription)
+                    print(error.localizedDescription)
                 }
             })
             addRef.updateChildValues(project.toDictionary())

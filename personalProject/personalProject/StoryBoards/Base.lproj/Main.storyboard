@@ -381,6 +381,7 @@
                         <constraints>
                             <constraint firstItem="lB7-xN-2NP" firstAttribute="top" secondItem="1V2-Z0-vdM" secondAttribute="top" id="0iW-eG-Xkw"/>
                             <constraint firstItem="lPE-w8-o3d" firstAttribute="leading" secondItem="1V2-Z0-vdM" secondAttribute="leading" constant="36" id="23X-as-tVZ"/>
+                            <constraint firstItem="1V2-Z0-vdM" firstAttribute="bottom" secondItem="822-BJ-4hY" secondAttribute="bottom" constant="41" id="86M-K7-JXC"/>
                             <constraint firstItem="Lcp-xM-izz" firstAttribute="leading" secondItem="1V2-Z0-vdM" secondAttribute="leading" constant="16" id="EcO-rD-8ex"/>
                             <constraint firstItem="822-BJ-4hY" firstAttribute="top" secondItem="1V2-Z0-vdM" secondAttribute="top" constant="556" id="QXC-ct-HHL"/>
                             <constraint firstItem="lB7-xN-2NP" firstAttribute="leading" secondItem="1V2-Z0-vdM" secondAttribute="leading" id="UR9-sy-REV"/>
@@ -433,7 +434,7 @@
                                 <rect key="frame" x="0.0" y="532" width="147" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phonenumber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqI-SP-0l0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phonenumber" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZqI-SP-0l0">
                                 <rect key="frame" x="100" y="286" width="174" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="28"/>
@@ -454,7 +455,7 @@
                                     <action selector="backButtonPressed:" destination="QDy-VS-8vA" eventType="touchUpInside" id="kme-wm-QuF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Creator Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qE-MV-kLo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Creator Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qE-MV-kLo">
                                 <rect key="frame" x="88" y="158" width="198" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
@@ -882,6 +883,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="E1a-hP-57U"/>
-        <segue reference="ZmM-cr-6XU"/>
+        <segue reference="qW6-Ku-8uy"/>
     </inferredMetricsTieBreakers>
 </document>

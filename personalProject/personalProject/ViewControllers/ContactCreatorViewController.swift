@@ -15,22 +15,29 @@ class ContactCreatorViewController: UIViewController {
     {
         dismiss(animated: true, completion: nil)
     }
-    
+    var proj: Project?
     @IBOutlet weak var creatorName: UILabel!
     @IBOutlet weak var creatorPhonenumber: UILabel!
     @IBOutlet weak var logoImage: UIImageView!
     
 //    func dataAppear () {
-////        ProjectService.projects(completion: <#T##([Project]) -> Void#>)
+//     ProjectService.projects(completion: )
 //    }
 //    
-    
+    func showing(project: Project) {
+        self.creatorName.text = project.creatorUsername
+        self.creatorPhonenumber.text = project.phoneNumber
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 backButton.layer.cornerRadius = 6
         // Do any additional setup after loading the view.
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        guard let project = proj else { return }
+        self.showing(project: project)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
