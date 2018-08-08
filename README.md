@@ -137,15 +137,15 @@ What got finished ~ I go it to where when you click the button it gives you all 
 
 Day 2 - 
 
-Goal: Have my app be ready to launch by the end of the day. Finish the profile page.
+Goal: Finish the profile page.
 
-What got finished ~ 
+What got finished ~ Couldn't finish Profile page finished, finished dictionary to summon profile page. 
 
 Day 3 - 
 
-Goal:
+Goal: Submit app to Apple 
 
-What got finished ~
+What got finished ~ Got the contact creator button working so the team memebers can communicate.
 
 Day 4 - 
 
