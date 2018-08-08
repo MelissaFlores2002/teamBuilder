@@ -14,29 +14,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
 ////    return AddedCollectionViewCell
 //
 //
-//    }
     let user = try! JSONDecoder().decode(User.self, from: UserDefaults.standard.value(forKey: "currentUser") as! Data)
 
-   
-    @IBAction func yourProjectsAndAddedTeams(_ sender: UISegmentedControl) {
-        let ref = Database.database().reference().child("users").child(user.uid).child("projects")
-        let ref2 = Database.database().reference().child("project")
-        ref.child("yourProjects").observeSingleEvent(of: .value) { (snap) in
-            let value = snap.value as! [String: Any]
-            let projIDs = value["uid"] as! [String]
-            
-            for projID in projIDs {
-                ref2.child(projID).observeSingleEvent(of: .value, with: { (snap) in
-                    let value = snap.value as! [String: Any]
-                    self.yourItems.append(Project(name: value["name"] as! String, location: value["location"] as! String, description: value["description"] as! String, why: value["why"] as! String, whoIsNeeded: value["whoIsNeeded"] as! String, creatorUsername: value["creatorUID"] as! String))
-                })
-            }
-
-            
-            
-        }
-    }
-    @IBOutlet weak var chooseBetweenYourAndAdded: UISegmentedControl!
     @IBOutlet weak var profileTitleLabel: UILabel!
     @IBOutlet weak var collectionViewAddedProjects: UICollectionView!
     @IBOutlet weak var logoutButton: UIButton!
@@ -47,15 +26,19 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     var newIndexPath: Int!
     
-    var currentItems = [Project]() {
+//    var currentItems = [Project]() {
+//        didSet {
+//            self.collectionViewAddedProjects.reloadData()
+//        }
+//    }
+//
+//    var addItems = [Project]()
+    
+    var yourItems = [Project](){
         didSet {
             self.collectionViewAddedProjects.reloadData()
         }
     }
-    
-    var addItems = [Project]()
-    
-    var yourItems = [Project]()
     
     
     @objc func buttonPressed(_ sender: UIButton) {
@@ -64,14 +47,34 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     }
     let reuseIdentifier = "yourCell"
     func collectionView(_ collectionViewYourProjects: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.currentItems.count
+        return self.yourItems.count
     }
-    func collectionView(_ collectionViewYourProjects: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionViewYourProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath ) as! AddedCollectionViewCell
+    func collectionView(_ collectionViewAddedProjects: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionViewAddedProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath ) as! AddedCollectionViewCell
 
         let row = indexPath.row
-        let projects = currentItems[row]
+        let projects = yourItems[row]
+        
+        Database.database().reference().child("users").child(user.uid).child("projectUIDs").observeSingleEvent(of: .value) { (snap) in
+            let projUIDs = snap.value as! [String]
+            for projUID in projUIDs {
+                Database.database().reference().child("project").child(projUID).observeSingleEvent(of: .value, with: { (snap) in
+                    let value = snap.value as! [String: String]
+                    let project = Project(name: value["name"]!, location: value["location"]!, description: value["description"]!, why: value["why"]!, whoIsNeeded: value["whoIsNeeded"]!, creatorUsername: value["creatorUID"]!, phoneNumber: value["phoneNumber"]!)
+                    self.yourItems.append(project)
+                    var projectsRef = Database.database().reference().child("projectUIDS")
+                    let snap = DataSnapshot()
 
+                })
+            }
+            self.yourItems = self.yourItems.filter {
+                $0.creatorUsername == self.user.uid
+
+            }
+            
+            
+        }
+        
         cell.nameOfProjectLabel.text = projects.name
         cell.takeACloserLookButton.tag = indexPath.row
         cell.takeACloserLookButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
@@ -83,34 +86,9 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     // TODO: swift case in "numberOfSections" and "cellForItem" based on the segmented controller
     
     func numberOfSections(in collectionViewAddedProjects: UICollectionView) -> Int {
-       
-//        self.addOrYour(sender: true)
-//        switch yourProjectsAndAddedTeams {
-//            case sender.0:
-//            
-//            break;
-//            
-//            case 1:
-//            
-//            break;
-//        }
-    
         
         return 1
     }
-    func addedCollectionView(_ collectionViewAddedProjects: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionViewAddedProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath ) as! AddedCollectionViewCell
-    
-        let row = indexPath.row
-        let project = currentItems[row]
-        
-        cell.nameOfProjectLabel.text = project.name
-        cell.takeACloserLookButton.tag = indexPath.row
-        cell.takeACloserLookButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
-        
-    return cell
-    }
-    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("You selected cell #\(indexPath.item)!")
@@ -120,34 +98,38 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         logoutButton.layer.cornerRadius = 6
         collectionViewAddedProjects.delegate = self
         collectionViewAddedProjects.dataSource = self
-        }
+        ProjectService.projects { (value) in
+            self.yourItems = value
+  }
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
         
         switch identifier {
         case "moreInfo":
             guard let indexPath = newIndexPath else { return }
-            let proj = currentItems[indexPath]
-            let destination = segue.destination as! AddSomeonesProjectViewController
-            destination.proj = proj
-            
+            if yourItems.count != 0 {
+                let proj = yourItems[indexPath]
+                let destination = segue.destination as! AddSomeonesProjectViewController
+                destination.proj = proj
+            }
         default :
             print("unexpected segue identifier")
         }
     }
-    func addOrYour (sender: UISegmentedControl, path: Int) -> Project? {
-        switch sender.selectedSegmentIndex {
-            
-        case 0:
-            return Project(name: self.yourItems[path].name, location: self.yourItems[path].location, description: self.yourItems[path].description, why: self.yourItems[path].why, whoIsNeeded: self.yourItems[path].whoIsNeeded, creatorUsername: self.yourItems[path].creatorUsername)
-        case 1:
-            return Project(name: self.yourItems[path].name, location: self.yourItems[path].location, description: self.yourItems[path].description, why: self.yourItems[path].why, whoIsNeeded: self.yourItems[path].whoIsNeeded, creatorUsername: self.yourItems[path].creatorUsername)
-        default:
-            print("failure")
-            return nil
-        }
-    }
-//    let reuseIdentifier1 = "addCell"
+//    func addOrYour (sender: UISegmentedControl, path: Int) -> Project? {
+//        switch sender.selectedSegmentIndex {
+//
+//        case 0:
+//            return Project(name: self.yourItems[path].name, location: self.yourItems[path].location, description: self.yourItems[path].description, why: self.yourItems[path].why, whoIsNeeded: self.yourItems[path].whoIsNeeded, creatorUsername: self.yourItems[path].creatorUsername, phoneNumber: self.yourItems[path].phoneNumber)
+//        case 1:
+//            return Project(name: self.yourItems[path].name, location: self.yourItems[path].location, description: self.yourItems[path].description, why: self.yourItems[path].why, whoIsNeeded: self.yourItems[path].whoIsNeeded, creatorUsername: self.yourItems[path].creatorUsername, phoneNumber: self.yourItems[path].phoneNumber)
+//        default:
+//            print("failure")
+//            return nil
+//        }
+//    }
+////    let reuseIdentifier1 = "addCell"
 //    var items1 = [" "]
 //    func collectionView1(_ collectionViewAddedProjects: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        return self.items1.count

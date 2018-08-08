@@ -29,7 +29,7 @@ class NewProjectViewController: UIViewController {
     }
     @IBOutlet weak var confirmButton: UIButton!
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
-        ProjectService.create(for: Project(name: inputNameTextField.text!, location: locationTextField.text!, description: inputProjectDescriptionTextField.text!, why: inputWhy.text!, whoIsNeeded: inputWhoYouNeedTextField.text!, creatorUsername: user.username)) {
+        ProjectService.create(for: Project(name: inputNameTextField.text!, location: locationTextField.text!, description: inputProjectDescriptionTextField.text!, why: inputWhy.text!, whoIsNeeded: inputWhoYouNeedTextField.text!, creatorUsername: user.username, phoneNumber: user.phoneNumber)) {
             success in
             if success == true {
                 self.tabBarController!.selectedIndex = 1

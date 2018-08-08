@@ -18,15 +18,17 @@ class Project {
     let why: String
     let whoIsNeeded: String
     let creatorUsername: String
+    let phoneNumber: String
     
     
-    init(name: String, location: String, description: String, why: String, whoIsNeeded: String, creatorUsername: String) {
+    init(name: String, location: String, description: String, why: String, whoIsNeeded: String, creatorUsername: String, phoneNumber: String) {
         self.name = name
         self.location = location
         self.description = description
         self.why = why
         self.whoIsNeeded = whoIsNeeded
         self.creatorUsername = creatorUsername
+        self.phoneNumber = phoneNumber
     }
     init?(snapshot: DataSnapshot) {
         guard let dict = snapshot.value as? [String: Any],
@@ -35,7 +37,8 @@ class Project {
         let description = dict["description"] as? String,
         let why = dict["why"] as? String,
         let whoIsNeeded = dict["whoIsNeeded"] as? String,
-        let creatorUsername = dict["creatorUID"] as? String
+        let creatorUsername = dict["creatorUID"] as? String,
+        let phoneNumber = dict["phoneNumber"] as? String
         else { return nil }
         
         self.key = snapshot.key
@@ -45,6 +48,7 @@ class Project {
         self.why = why
         self.whoIsNeeded = whoIsNeeded
         self.creatorUsername = creatorUsername
+        self.phoneNumber = phoneNumber
     }
     
 //
@@ -57,7 +61,8 @@ class Project {
              "description" : self.description,
              "why" : self.why,
              "whoIsNeeded" : self.whoIsNeeded,
-             "creatorUID": self.creatorUsername]
+             "creatorUID": self.creatorUsername,
+             "phoneNumber": self.phoneNumber]
     
     }
 

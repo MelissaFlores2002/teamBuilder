@@ -20,9 +20,18 @@ struct ProjectService {
     let user = try! JSONDecoder().decode(User.self, from: UserDefaults.standard.value(forKey: "currentUser") as! Data)
     let currentUser = User.current
     
+    
     static func create(for project: Project, completion: @escaping (Bool) -> Void) {
         let addRef = Database.database().reference().child("project").childByAutoId()
         addRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let projectUID = snapshot.key
+            let userRef = Database.database().reference().child("users").child("\(User.current.uid)")
+            let newDict: [String: Any] = ["phoneNumber": User.current.phoneNumber, "username": User.current.username, "projectUIDs": [projectUID]]
+            userRef.setValue(newDict, withCompletionBlock: { (error, ref) in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                }
+            })
             addRef.updateChildValues(project.toDictionary())
             { error, ref in
                 if error == nil {
@@ -57,7 +66,8 @@ struct ProjectService {
                            "why" : project.why,
                            "whoIsNeeded" : project.whoIsNeeded,
                            "creatorUID": project.creatorUsername,
-                           "reporter_uid": User.current.uid]
+                           "reporter_uid": User.current.uid,
+                           "phoneNumber": project.phoneNumber]
         flaggedPostRef.updateChildValues(flaggedDict)
         let flagCountRef = flaggedPostRef.child("flag_count")
         flagCountRef.runTransactionBlock({ (mutableData) -> TransactionResult in

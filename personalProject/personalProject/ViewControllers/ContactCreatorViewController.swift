@@ -1,42 +1,35 @@
 //
-//  LoggingOutViewController.swift
+//  ContactCreatorViewController.swift
 //  personalProject
 //
-//  Created by Melissa Flores on 8/1/18.
+//  Created by Melissa Flores on 8/8/18.
 //  Copyright © 2018 Melissa Flores. All rights reserved.
 //
-import Foundation
+
 import UIKit
-import Firebase
-import FirebaseAuth
-import FirebaseUI
-import FirebaseDatabase
 
-class LoggingOutViewController: UIViewController {
+class ContactCreatorViewController: UIViewController {
 
-    @IBOutlet weak var logoutButton: UIButton!
-    @IBAction func logoutButtonPressed(_ sender: UIButton) {
-        UserDefaults.standard.set(false, forKey: "isNotUserLoggedIn")
-        UserDefaults.standard.synchronize()
-    }
-    
-    @IBOutlet weak var cancelButton: UIButton!
-    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+    @IBOutlet weak var backButton: UIButton!
+    @IBAction func backButtonPressed(_ sender: UIButton)
+    {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var creatorName: UILabel!
+    @IBOutlet weak var creatorPhonenumber: UILabel!
+    @IBOutlet weak var logoImage: UIImageView!
+    
+//    func dataAppear () {
+////        ProjectService.projects(completion: <#T##([Project]) -> Void#>)
+//    }
+//    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logoutButton.layer.cornerRadius = 20
-        cancelButton.layer.cornerRadius = 6
-
-
+backButton.layer.cornerRadius = 6
         // Do any additional setup after loading the view.
     }
-    
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -54,8 +47,4 @@ class LoggingOutViewController: UIViewController {
     }
     */
 
-}
-
-extension LoggingOutViewController: FUIAuthDelegate{
-    
 }

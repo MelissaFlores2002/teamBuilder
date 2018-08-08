@@ -55,7 +55,7 @@ class CreateUsernameViewController: UIViewController {
 //                let user = User(snapshot: snapshot)
 //            }
 //            )
-            UserService.create(firUser, username: username, phonenumber: phonenumber) { (user) in
+        UserService.create(firUser, username: username, phoneNumber: phonenumber) { (user) in
                 guard let user = user else {
                     return
                 }

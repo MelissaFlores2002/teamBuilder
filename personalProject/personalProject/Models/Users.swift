@@ -12,6 +12,7 @@ import FirebaseDatabase.FIRDataSnapshot
 class User: Codable {
     let uid: String
     let username: String
+    let phoneNumber: String
 
     private static var _current: User?
     
@@ -30,16 +31,19 @@ class User: Codable {
 //        return newUser
 //    }
     
-    init(uid: String, username: String) {
+    init(uid: String, username: String, phoneNumber: String) {
         self.uid = uid
         self.username = username
+        self.phoneNumber = phoneNumber
     }
     
     init?(snapshot: DataSnapshot) {
-        guard let dict = snapshot.value as? [String: Any], let username = dict["username"] as? String else { return nil }
+        guard let dict = snapshot.value as? [String: Any], let username = dict["username"] as? String, let phoneNumber = dict["phoneNumber"] as? String else { return nil }
         
         self.uid = snapshot.key
-        self.username = username    }
+        self.username = username
+        self.phoneNumber = phoneNumber
+    }
     
     static func setCurrent(_ user: User, writeToUserDefaults: Bool = false) {
         if writeToUserDefaults {

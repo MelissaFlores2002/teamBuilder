@@ -22,8 +22,8 @@ struct UserService {
     }
     
     
-    static func create(_ firUser: FIRUser, username: String, phonenumber: String, completion: @escaping (User?) -> Void) {
-        let userAttrs = ["username": username, "phonenumber": phonenumber]
+    static func create(_ firUser: FIRUser, username: String, phoneNumber: String, completion: @escaping (User?) -> Void) {
+        let userAttrs = ["username": username, "phoneNumber": phoneNumber]
         
         let ref = Database.database().reference().child("users").child(firUser.uid)
         ref.setValue(userAttrs) { (error, ref) in
@@ -42,6 +42,9 @@ struct UserService {
     }
     
     static func addOrCreateProj(_ currentUID: String, yourProj: Bool, projectUID: String) -> [String: Any] {
+        
+        let ref = Database.database().reference().child("project").child(projectUID)
+        
         let teamsDict = ["yourProj": yourProj, "projectUID": projectUID, "currentUID": currentUID] as [String : Any]
         return teamsDict
         

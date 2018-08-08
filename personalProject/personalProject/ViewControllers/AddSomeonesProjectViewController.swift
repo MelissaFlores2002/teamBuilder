@@ -27,11 +27,6 @@ class AddSomeonesProjectViewController: UIViewController {
     }
     @IBOutlet weak var creatorName: UILabel!
     var items = [Project]()
-    @IBOutlet weak var addRequestButton: UIButton!
-    @IBAction func addRequestButtonPressed(_ sender: UIButton) {
-        
-        dismiss(animated: true, completion: nil)
-    }
     var proj: Project?
     @IBOutlet weak var contactButton: UIButton!
     @IBAction func contactButtonPressed(_ sender: UIButton) {
@@ -74,7 +69,6 @@ class AddSomeonesProjectViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cancelButton.layer.cornerRadius = 6
-        addRequestButton.layer.cornerRadius = 6
         contactButton.layer.cornerRadius = 6
         
         //        self.showing(project: items[])
