@@ -139,17 +139,17 @@ Day 2 -
 
 Goal: Finish the profile page.
 
-What got finished ~ Couldn't finish Profile page finished, finished dictionary to summon profile page. 
+What got finished ~ Couldn't finish Profile page finished, finished dictionary to summon profile page, as well as finished the logo and app icon.
 
 Day 3 - 
 
 Goal: Submit app to Apple 
 
-What got finished ~ Got the contact creator button working so the team memebers can communicate.
+What got finished ~ Got the contact creator button working so the team memebers can communicate. Finished the flagging function and the logout function. Ready to be shipped!
 
 Day 4 - 
 
-Goal:
+Goal: Send the user after logging back in after logging out to the main view controller.
 
 What got finished ~
 
