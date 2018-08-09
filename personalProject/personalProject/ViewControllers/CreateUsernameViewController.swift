@@ -19,7 +19,7 @@ class CreateUsernameViewController: UIViewController {
     @IBOutlet weak var phoneNumber: InputNumberTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextButton.layer.cornerRadius = 50
+        nextButton.layer.cornerRadius = 35
         
         usernameTextField.doneButtonPressed = {
             if self.usernameTextField.isFirstResponder {

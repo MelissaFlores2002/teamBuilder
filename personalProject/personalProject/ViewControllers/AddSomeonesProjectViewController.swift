@@ -10,7 +10,7 @@ import UIKit
 
 class AddSomeonesProjectViewController: UIViewController {
     var newIndexPath: Int!
-
+    
     @IBOutlet weak var addTitle: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var projectNameLabel: UILabel!
@@ -38,28 +38,22 @@ class AddSomeonesProjectViewController: UIViewController {
     @IBOutlet weak var flagingButton: UIButton!
     
     @IBAction func flaggingButtonPressed(_ sender: UIButton) {
+//
+//        guard let indexPath = self.newIndexPath(for: AddSomeonesProjectViewController) else { return }
         
-        //        guard let indexPath = self.indexPath(for: AddSomeonesProjectViewController) else { return }
-        //        let projs = Project[indexPath.section]
-        //        let proj = projs.projects
-        //
-        //        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        //
-        //        if proj.uid != User.current.uid {
-        //            let flagAction = UIAlertAction(title: "Report as Inappropriate", style: .default) { _ in
-        //                print("report post")
-        //            }
-        //
-        //            alertController.addAction(flagAction)
-        //        }
-        //
-        //        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        //        alertController.addAction(cancelAction)
-        //
-        //        present(alertController, animated: true, completion: nil)
-        //    }
-    }
-    
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let creatorUsername = User.current.username
+        if creatorUsername != User.current.username {
+            let flagAction = UIAlertAction(title: "Report as Inappropriate", style: .default) { _ in
+                print("report post")
+            }
+                    alertController.addAction(flagAction)
+                }
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                alertController.addAction(cancelAction)
+        
+                present(alertController, animated: true, completion: nil)
+            }
     
     func showing(project: Project) {
         self.projectNameLabel.text = project.name
@@ -73,6 +67,7 @@ class AddSomeonesProjectViewController: UIViewController {
         super.viewDidLoad()
         cancelButton.layer.cornerRadius = 6
         contactButton.layer.cornerRadius = 6
+        flagingButton.layer.cornerRadius = 6
         
         //        self.showing(project: items[])
         //        ProjectService.projects { (projectsFetched) in
@@ -106,6 +101,7 @@ class AddSomeonesProjectViewController: UIViewController {
         }
     }
 }
+
 
 
 /*

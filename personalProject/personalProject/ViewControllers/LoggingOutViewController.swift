@@ -16,8 +16,15 @@ class LoggingOutViewController: UIViewController {
 
     @IBOutlet weak var logoutButton: UIButton!
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
-        UserDefaults.standard.set(false, forKey: "isNotUserLoggedIn")
-        UserDefaults.standard.synchronize()
+        do {
+            try Auth.auth().signOut()
+            UserDefaults.standard.set(false, forKey: "Login")
+            UserDefaults.standard.synchronize()
+            self.dismiss(animated: true, completion: nil)
+        } catch let err {
+            print(err)
+        }
+
     }
     
     @IBOutlet weak var cancelButton: UIButton!

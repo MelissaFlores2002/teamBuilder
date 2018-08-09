@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="XBp-J7-QvH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="549"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="467"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TeamBuilder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ni-qp-d2Y">
-                                <rect key="frame" x="77" y="557" width="240" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TeamBuilder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ni-qp-d2Y">
+                                <rect key="frame" x="0.0" y="507" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="vTT-Kb-fre"/>
                                 </constraints>
@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="You might be the right peice for someones puzzle." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XFR-IC-Fu9">
-                                <rect key="frame" x="8" y="609" width="359" height="52"/>
+                                <rect key="frame" x="8" y="581" width="359" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="N0J-Ds-tzg"/>
                                 </constraints>
@@ -44,12 +44,12 @@
                         <constraints>
                             <constraint firstItem="XBp-J7-QvH" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="0Gz-O3-YDH"/>
                             <constraint firstItem="XBp-J7-QvH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A6D-iy-wbQ"/>
-                            <constraint firstItem="8ni-qp-d2Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="FcD-0x-esA"/>
+                            <constraint firstItem="8ni-qp-d2Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FcD-0x-esA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XFR-IC-Fu9" secondAttribute="trailing" constant="8" id="O0z-Kc-H17"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XBp-J7-QvH" secondAttribute="bottom" constant="118" id="nQW-HM-HvE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ni-qp-d2Y" secondAttribute="trailing" constant="58" id="pAx-xu-PbC"/>
-                            <constraint firstItem="XFR-IC-Fu9" firstAttribute="top" secondItem="8ni-qp-d2Y" secondAttribute="bottom" constant="8" id="phL-3k-27j"/>
-                            <constraint firstItem="8ni-qp-d2Y" firstAttribute="top" secondItem="XBp-J7-QvH" secondAttribute="bottom" constant="8" id="ttj-zz-gQu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XBp-J7-QvH" secondAttribute="bottom" constant="200" id="nQW-HM-HvE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8ni-qp-d2Y" secondAttribute="trailing" id="pAx-xu-PbC"/>
+                            <constraint firstItem="XFR-IC-Fu9" firstAttribute="top" secondItem="8ni-qp-d2Y" secondAttribute="bottom" constant="30" id="phL-3k-27j"/>
+                            <constraint firstItem="8ni-qp-d2Y" firstAttribute="top" secondItem="XBp-J7-QvH" secondAttribute="bottom" constant="40" id="ttj-zz-gQu"/>
                             <constraint firstItem="XFR-IC-Fu9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="x4h-z7-10t"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XBp-J7-QvH" secondAttribute="trailing" id="zjs-8A-dc7"/>
                         </constraints>

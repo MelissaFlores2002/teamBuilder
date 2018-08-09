@@ -50,27 +50,26 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         return self.yourItems.count
     }
     func collectionView(_ collectionViewAddedProjects: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionViewAddedProjects.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath ) as! AddedCollectionViewCell
 
         let row = indexPath.row
         let projects = yourItems[row]
         
-        Database.database().reference().child("users").child(user.uid).child("projectUIDs").observeSingleEvent(of: .value) { (snap) in
-            let projUIDs = snap.value as! [String]
-            for projUID in projUIDs {
-                Database.database().reference().child("project").child(projUID).observeSingleEvent(of: .value, with: { (snap) in
-                    let value = snap.value as! [String: String]
-                    let project = Project(name: value["name"]!, location: value["location"]!, description: value["description"]!, why: value["why"]!, whoIsNeeded: value["whoIsNeeded"]!, creatorUsername: value["creatorUID"]!, phoneNumber: value["phoneNumber"]!)
-                    self.yourItems.append(project)
-                })
-            }
-            self.yourItems = self.yourItems.filter {
-                $0.creatorUsername == self.user.uid
-
-            }
-            
-            
-        }
+//        Database.database().reference().child("users").child(user.uid).child("projectUIDs").observeSingleEvent(of: .value) { (snap) in
+//            let projUIDs = snap.value as! [String]
+//            for projUID in projUIDs {
+//                Database.database().reference().child("project").child(projUID).observeSingleEvent(of: .value, with: { (snap) in
+//                    let value = snap.value as! [String: String]
+//                    let project = Project(name: value["name"]!, location: value["location"]!, description: value["description"]!, why: value["why"]!, whoIsNeeded: value["whoIsNeeded"]!, creatorUsername: value["creatorUID"]!, phoneNumber: value["phoneNumber"]!)
+////                    self.yourItems.append(project) Database.database().reference().child("projectUIDS").observeSingleEvent(of: .value, with: { (snap) in
+////                        DataSnapshot.self
+//
+//                })
+//
+//
+//
+//        }
         
         cell.nameOfProjectLabel.text = projects.name
         cell.takeACloserLookButton.tag = indexPath.row
@@ -97,6 +96,15 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         collectionViewAddedProjects.dataSource = self
      
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        ProjectService.projects { (myProjects) in
+        self.yourItems = myProjects.filter {
+            $0.creatorUsername == self.user.username
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let identifier = segue.identifier else { return }
         
