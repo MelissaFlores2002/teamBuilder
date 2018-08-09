@@ -19,10 +19,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     @IBOutlet weak var profileTitleLabel: UILabel!
     @IBOutlet weak var collectionViewAddedProjects: UICollectionView!
     @IBOutlet weak var logoutButton: UIButton!
-    @IBAction func logoutButtonPressed(_ sender: UIButton) {
-    
-    }
-    
+//    @IBAction func logoutButtonPressed(_ sender: UIButton) {
+//    }
     
     var newIndexPath: Int!
     

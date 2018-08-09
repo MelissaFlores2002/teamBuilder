@@ -17,16 +17,30 @@ class LoggingOutViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
         do {
+            UserDefaults.standard.set(nil, forKey: Constants.UserDefaults.currentUser)
             try Auth.auth().signOut()
-            UserDefaults.standard.set(false, forKey: "Login")
-            UserDefaults.standard.synchronize()
-            self.dismiss(animated: true, completion: nil)
-        } catch let err {
-            print(err)
+//            print("This should be executed.")
+//            try functionWhichMightFail()
+//            print("This will be executed if things went well.")
+        } catch let logoutError {
+            print("Here is the error. Go handle it!")
+            print(logoutError)
         }
-
+        
+        
+        if let parentVc = self.tabBarController?.presentingViewController {
+            parentVc.dismiss(animated: true)
+        } else {
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
+        }
+//        dismiss(animated: true, completion: nil)
     }
     
+//    func functionWhichMightFail() throws {
+//        performSegue(withIdentifier: "loginSegue", sender: self)
+//    }
+//
+
     @IBOutlet weak var cancelButton: UIButton!
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)

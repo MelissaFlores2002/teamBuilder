@@ -10,7 +10,7 @@ import UIKit
 
 class AddSomeonesProjectViewController: UIViewController {
     var newIndexPath: Int!
-    
+
     @IBOutlet weak var addTitle: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var projectNameLabel: UILabel!
@@ -36,10 +36,10 @@ class AddSomeonesProjectViewController: UIViewController {
     }
     
     @IBOutlet weak var flagingButton: UIButton!
-    
+   
     @IBAction func flaggingButtonPressed(_ sender: UIButton) {
-//
-//        guard let indexPath = self.newIndexPath(for: AddSomeonesProjectViewController) else { return }
+        //
+        //        guard let indexPath = self.newIndexPath(for: AddSomeonesProjectViewController) else { return }
         
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let creatorUsername = User.current.username
@@ -47,14 +47,21 @@ class AddSomeonesProjectViewController: UIViewController {
             let flagAction = UIAlertAction(title: "Report as Inappropriate", style: .default) { _ in
                 print("report post")
             }
-                    alertController.addAction(flagAction)
-                }
-                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-                alertController.addAction(cancelAction)
-        
-                present(alertController, animated: true, completion: nil)
+            alertController.addAction(flagAction)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        let flagAction = UIAlertAction(title: "Flag", style: .destructive) { alertaction in
+            ProjectService.flag(self.proj!)
+                let okAlert = UIAlertController(title: nil, message: "The post has been flagged.", preferredStyle: .alert)
+                okAlert.addAction(UIAlertAction(title: "Ok", style: .default))
+                self.present(okAlert, animated: true)
             }
-    
+        alertController.addAction(flagAction)
+        present(alertController, animated: true, completion: nil)
+    }
+//    var didTapFlagButton: ((flagingButton) -> Void?)
+
     func showing(project: Project) {
         self.projectNameLabel.text = project.name
         self.locationAnsweredLabel.text = project.location
@@ -94,8 +101,8 @@ class AddSomeonesProjectViewController: UIViewController {
         switch identifier {
         case "contactCreatorSegue":
             guard let indexPath = newIndexPath else { return }
-                let destination = segue.destination as! ContactCreatorViewController
-                destination.proj = proj
+            let destination = segue.destination as! ContactCreatorViewController
+            destination.proj = proj
         default :
             print("unexpected segue identifier")
         }
@@ -113,3 +120,4 @@ class AddSomeonesProjectViewController: UIViewController {
  // Pass the selected object to the new view controller.
  }
  */
+

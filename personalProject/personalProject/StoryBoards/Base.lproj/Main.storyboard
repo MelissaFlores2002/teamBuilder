@@ -94,7 +94,6 @@
                                             <color key="titleColor" red="0.88601892597876819" green="0.90756858855295885" blue="0.90800029765530887" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="logoutButtonPressed:" destination="skE-Zd-IMS" eventType="touchUpInside" id="gS4-g2-led"/>
                                             <segue destination="Dz1-Xv-1s5" kind="show" id="6I3-yK-RiC"/>
                                         </connections>
                                     </button>
@@ -188,7 +187,6 @@
                                 </state>
                                 <connections>
                                     <action selector="logoutButtonPressed:" destination="Dz1-Xv-1s5" eventType="touchUpInside" id="RQ7-sf-O8W"/>
-                                    <segue destination="qR7-UB-dbp" kind="show" identifier="Login" id="Lte-gy-XHd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -205,6 +203,7 @@
                     <connections>
                         <outlet property="cancelButton" destination="27O-ef-2nC" id="ZgW-Ro-I6m"/>
                         <outlet property="logoutButton" destination="8xp-lu-1w3" id="TXu-YW-EUD"/>
+                        <segue destination="qR7-UB-dbp" kind="showDetail" identifier="loginSegue" id="sl7-lQ-ebd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gF-gy-7WD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -214,8 +213,8 @@
         <!--Login-->
         <scene sceneID="HXg-hR-EPF">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="Login.storyboard" storyboardName="Login" id="qR7-UB-dbp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVK-wm-MNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="Login.storyboard" storyboardName="Login" id="qR7-UB-dbp" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="6344" y="626"/>
         </scene>

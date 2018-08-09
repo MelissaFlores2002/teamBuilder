@@ -106,9 +106,17 @@ extension LoginViewController: FUIAuthDelegate {
                 // handle existing user
                 User.setCurrent(user, writeToUserDefaults: true)
                 
-                let initialViewController = UIStoryboard.initialViewController(for: .main)
-                self.view.window?.rootViewController = initialViewController
-                self.view.window?.makeKeyAndVisible()
+                
+                if let parentVc = self.navigationController?.presentingViewController {
+                    parentVc.dismiss(animated: true)
+                } else {
+                    self.performSegue(withIdentifier: "mainSegue", sender: nil)
+                }
+                
+                
+//                let initialViewController = UIStoryboard.initialViewController(for: .main)
+//                self.view.window?.rootViewController = initialViewController
+//                self.view.window?.makeKeyAndVisible()
             } else {
                 // handle new user
 //                User.create(user, newUserDefault: true)
