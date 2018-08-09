@@ -28,6 +28,7 @@
 		06BD64A92107AB320038F725 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD64A82107AB320038F725 /* UserService.swift */; };
 		06BD64AB2107AC370038F725 /* CreateUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD64AA2107AC370038F725 /* CreateUsernameViewController.swift */; };
 		06D0C2B6211B5A1300780B24 /* ContactCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0C2B5211B5A1300780B24 /* ContactCreatorViewController.swift */; };
+		06D0C2B8211C188B00780B24 /* UIDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D0C2B7211C188B00780B24 /* UIDevices.swift */; };
 		06F972D52106862C005AE63B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F972D42106862C005AE63B /* AppDelegate.swift */; };
 		06F972DA2106862C005AE63B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F972D82106862C005AE63B /* Main.storyboard */; };
 		06F972DC2106862F005AE63B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F972DB2106862F005AE63B /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		06BD64A82107AB320038F725 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserService.swift; path = personalProject/Models/UserService.swift; sourceTree = SOURCE_ROOT; };
 		06BD64AA2107AC370038F725 /* CreateUsernameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUsernameViewController.swift; sourceTree = "<group>"; };
 		06D0C2B5211B5A1300780B24 /* ContactCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCreatorViewController.swift; sourceTree = "<group>"; };
+		06D0C2B7211C188B00780B24 /* UIDevices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevices.swift; sourceTree = "<group>"; };
 		06F972D12106862C005AE63B /* personalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = personalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F972D42106862C005AE63B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06F972D92106862C005AE63B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				06131E162108F113001408FA /* Storyboard+Utility.swift */,
+				06D0C2B7211C188B00780B24 /* UIDevices.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				0691A3AD2111306500401DA7 /* InputNumberTextField.swift in Sources */,
 				0691A3C021137F0A00401DA7 /* ProjectService.swift in Sources */,
 				0691A3BB2112312F00401DA7 /* LoggingOutViewController.swift in Sources */,
+				06D0C2B8211C188B00780B24 /* UIDevices.swift in Sources */,
 				0691A3B52112309C00401DA7 /* ProfileViewController.swift in Sources */,
 				06BD649C2106B71E0038F725 /* LoginViewController.swift in Sources */,
 				0604C965210D17680069D9E2 /* MainViewController.swift in Sources */,

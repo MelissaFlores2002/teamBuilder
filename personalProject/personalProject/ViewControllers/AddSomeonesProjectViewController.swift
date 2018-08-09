@@ -11,6 +11,7 @@ import UIKit
 class AddSomeonesProjectViewController: UIViewController {
     var newIndexPath: Int!
 
+    @IBOutlet weak var infoStackView: UIStackView!
     @IBOutlet weak var addTitle: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var projectNameLabel: UILabel!
@@ -75,6 +76,9 @@ class AddSomeonesProjectViewController: UIViewController {
         cancelButton.layer.cornerRadius = 6
         contactButton.layer.cornerRadius = 6
         flagingButton.layer.cornerRadius = 6
+//        if UIDevice.modelName == "iPhone 4s" {
+//            self.infoStackView.setNeedsUpdateConstraints() 
+//        }
         
         //        self.showing(project: items[])
         //        ProjectService.projects { (projectsFetched) in
@@ -106,6 +110,7 @@ class AddSomeonesProjectViewController: UIViewController {
         default :
             print("unexpected segue identifier")
         }
+        
     }
 }
 
