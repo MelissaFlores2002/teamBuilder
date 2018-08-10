@@ -49,7 +49,7 @@ class LoggingOutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logoutButton.layer.cornerRadius = 20
+        logoutButton.layer.cornerRadius = 6
         cancelButton.layer.cornerRadius = 6
 
 
